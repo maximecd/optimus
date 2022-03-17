@@ -16,9 +16,9 @@ class Transaction extends Model
         'description',
         'montant',
         'sens_transaction',
-        'compte_id',
-        'user_id',
-        'categorie_id',
+        'id_compte',
+        'id_user',
+        'id_categorie',
     ];
     public function user()
     {

@@ -10,7 +10,7 @@ use App\Models\Compte;
 class UtilisateurCompte extends Model
 {
     use HasFactory;
-    protected $fillable = ['editeur', 'id_compte', 'id_utilisateur'];
+    protected $fillable = ['editeur', 'id_compte', 'id_user'];
     public function user()
     {
         return $this->belongsTo(User::class);

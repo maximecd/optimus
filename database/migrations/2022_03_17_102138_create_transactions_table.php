@@ -19,25 +19,25 @@ return new class extends Migration {
             $table->decimal('montant', 10, 2);
             $table->enum('sens_transaction', ['entrant', 'sortant']);
 
-            $table->unsignedBigInteger('compte_id')->nullable();
+            $table->unsignedBigInteger('id_compte')->nullable();
             $table
-                ->foreign('compte_id')
+                ->foreign('id_compte')
                 ->references('id')
                 ->on('comptes')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
 
-            $table->unsignedBigInteger('user_id')->nullable();
+            $table->unsignedBigInteger('id_user')->nullable();
             $table
-                ->foreign('user_id')
+                ->foreign('id_user')
                 ->references('id')
                 ->on('users')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
 
-            $table->unsignedBigInteger('categorie_id')->nullable();
+            $table->unsignedBigInteger('id_categorie')->nullable();
             $table
-                ->foreign('categorie_id')
+                ->foreign('id_categorie')
                 ->references('id')
                 ->on('categories')
                 ->onDelete('restrict')
