@@ -4,9 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Compte;
-use App\Models\User;
-use App\Models\Categorie;
+use App\Models\{Compte, User, Categorie};
 
 class Transaction extends Model
 {
