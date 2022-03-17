@@ -15,7 +15,7 @@ return new class extends Migration {
         Schema::disableForeignKeyConstraints();
         Schema::create('comptes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_admin')->nullable();
+            $table->unsignedBigInteger('id_admin');
             $table
                 ->foreign('id_admin')
                 ->references('id')
