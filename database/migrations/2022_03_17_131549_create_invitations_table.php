@@ -13,14 +13,20 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('utilisateur_comptes', function (Blueprint $table) {
-
+        Schema::create('invitations', function (Blueprint $table) {
+            $table->unsignedBigInteger('id_admin')->nullable();
+            $table->unsignedBigInteger('id_invite')->nullable();
             $table->unsignedBigInteger('id_compte')->nullable();
-            $table->unsignedBigInteger('id_user')->nullable();
-            $table->primary(['id_compte', 'id_user']);
+            $table->primary(['id_admin', 'id_invite', 'id_compte']);
 
             $table
-                ->foreign('id_user')
+                ->foreign('id_admin')
+                ->references('id')
+                ->on('users')
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
+            $table
+                ->foreign('id_invite')
                 ->references('id')
                 ->on('users')
                 ->onDelete('restrict')
@@ -32,9 +38,6 @@ return new class extends Migration
                 ->on('comptes')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
-
-            $table->boolean('editeur');
-
             $table->timestamps();
         });
     }
@@ -46,6 +49,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('utilisateur_comptes');
+        Schema::dropIfExists('invitations');
     }
 };
