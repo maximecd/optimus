@@ -10,7 +10,7 @@ class Compte extends Model
     use HasFactory;
     protected $fillable = ['intitule','id_admin'];
     public function user() {
-    return $this->belongsTo(Compte::class);
+    return $this->belongsTo(User::class);
     }
     
 }
