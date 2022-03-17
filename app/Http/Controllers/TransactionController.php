@@ -16,7 +16,7 @@ class TransactionController extends Controller
     public function index()
     {
         $transactions = Transaction::all();
-        return view('index', compact('transactions'));
+        return view('transaction/index', compact('transactions'));
     }
 
     /**
@@ -26,7 +26,7 @@ class TransactionController extends Controller
      */
     public function create()
     {
-        return view('create');
+        return view('transaction/create');
     }
 
     /**
@@ -56,7 +56,7 @@ class TransactionController extends Controller
      */
     public function show(Transaction $transaction)
 {
-    return view('show', compact('transaction'));
+    return view('transaction/show', compact('transaction'));
 }
 
     /**
@@ -66,7 +66,7 @@ class TransactionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Transaction $transaction) {
-        return view('edit', compact('transaction'));
+        return view('transaction/edit', compact('transaction'));
     }
 
     /**
