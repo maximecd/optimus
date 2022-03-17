@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('invitations', function (Blueprint $table) {
-            $table->unsignedBigInteger('id_admin')->nullable();
-            $table->unsignedBigInteger('id_invite')->nullable();
-            $table->unsignedBigInteger('id_compte')->nullable();
+            $table->unsignedBigInteger('id_admin');
+            $table->unsignedBigInteger('id_invite');
+            $table->unsignedBigInteger('id_compte');
             $table->primary(['id_admin', 'id_invite', 'id_compte']);
 
             $table
