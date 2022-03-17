@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('utilisateur_comptes', function (Blueprint $table) {
 
-            $table->unsignedBigInteger('id_compte')->nullable();
-            $table->unsignedBigInteger('id_user')->nullable();
+            $table->unsignedBigInteger('id_compte');
+            $table->unsignedBigInteger('id_user');
             $table->primary(['id_compte', 'id_user']);
 
             $table
