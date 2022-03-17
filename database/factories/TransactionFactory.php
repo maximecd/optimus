@@ -19,10 +19,7 @@ class TransactionFactory extends Factory
         return ['intitule' => $this->faker->text(50),
             'description' => $this->faker->text(200),
             'montant' => $this->faker->numberBetween(-10000, 10000),
-            'sens_transaction' => $this->faker->randomElement(['entrant', 'sortant']),
-            'id_compte' => $this->faker->numberBetween(0, 10000),
-            'id_user' => $this->faker->numberBetween(0, 10000),
-            'id_categorie' => $this->faker->numberBetween(0, 10000),
+            'sens_transaction' => $this->faker->randomElement(['entrant', 'sortant'])
     ];
     }
 }
