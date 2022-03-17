@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('first_name');
-            $table->string('profile_picture');
+            $table->string('profile_picture')->default('https://icon-library.com/images/default-user-icon/default-user-icon-8.jpg');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
