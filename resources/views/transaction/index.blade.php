@@ -1,4 +1,4 @@
-@section('contenu')
+
 @if(session()->has('info'))
 <div class="notification is-success">
     {{ session('info') }}
@@ -51,4 +51,3 @@
 
     </footer>
 </div>
-@endsection
