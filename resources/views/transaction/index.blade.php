@@ -1,4 +1,4 @@
-<div>
+<x-app-layout>
     <div>
         <table>
             <thead>
@@ -34,4 +34,4 @@
         </table>
 
     </div>
-</div>
+</x-app-layout>
