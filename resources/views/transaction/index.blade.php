@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
+    <a class="button is-info" href="{{ route('transaction.create') }}">Créer une transaction</a>
+
     <div>
         <table>
             <thead>
