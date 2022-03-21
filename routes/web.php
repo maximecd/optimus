@@ -15,12 +15,13 @@ use App\Http\Controllers\TransactionController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('accueil');
+})->middleware(['auth'])->name('accueil');
 
+/*
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->middleware(['auth'])->name('dashboard'); */
 
 require __DIR__ . '/auth.php';
 
