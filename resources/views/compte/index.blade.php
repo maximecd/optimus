@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Accueil')
-
 @section('content')
-<p>Test</p>
+
+<a class="button is-info" href="{{ route('compte.create') }}">Créer un compte</a>
+
 <table class="table is-hoverable">
     <thead>
         <tr>

@@ -26,7 +26,7 @@ class CompteController extends Controller
      */
     public function create()
     {
-        return view('transaction/create');
+        return view('compte/create');
     }
 
     /**
