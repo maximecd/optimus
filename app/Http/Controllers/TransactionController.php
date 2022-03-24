@@ -8,6 +8,7 @@ use App\Http\Requests\TransactionRequest;
 use App\Models\Categorie;
 use App\Models\User;
 use App\Models\Compte;
+use Illuminate\Support\Facades\Auth;
 
 class TransactionController extends Controller
 {
@@ -43,17 +44,17 @@ class TransactionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(TransactionRequest  $request, Transaction $transaction)
-{
-    $transaction->intitule=$request->intitule;
-    $transaction->description=$request->description;
-    $transaction->montant=$request->montant;
-    $transaction->sens_transaction=$request->sens_transaction;
-    $transaction->id_compte=$request->id_compte;
-    $transaction->id_user=$request->id_user;
-    $transaction->id_categorie=$request->id_categorie;
-    $transaction->save();
-    return redirect()->route('transaction.index')->with('info','La transaction ' . $transaction->intitule . ' a été créée');
-}
+    {
+        $transaction->intitule = $request->intitule;
+        $transaction->description = $request->description;
+        $transaction->montant = $request->montant;
+        $transaction->sens_transaction = $request->sens_transaction;
+        $transaction->id_compte = $request->id_compte;
+        $transaction->id_user = Auth::id();
+        $transaction->id_categorie = $request->id_categorie;
+        $transaction->save();
+        return redirect()->route('transaction.index')->with('info', 'La transaction ' . $transaction->intitule . ' a été créée');
+    }
 
     /**
      * Display the specified resource.
@@ -62,9 +63,12 @@ class TransactionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Transaction $transaction)
-{
-    return view('transaction/show', compact('transaction'));
-}
+    {
+        $categories = Categorie::all();
+        $users = User::all();
+        $comptes = Compte::all();
+        return view('transaction/show', compact('transaction', 'categories', 'users', 'comptes'));
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -72,7 +76,8 @@ class TransactionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Transaction $transaction) {
+    public function edit(Transaction $transaction)
+    {
         $categories = Categorie::all();
         $users = User::all();
         $comptes = Compte::all();
@@ -86,7 +91,8 @@ class TransactionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(TransactionRequest $request, Transaction $transaction) {
+    public function update(TransactionRequest $request, Transaction $transaction)
+    {
         $transaction->update($request->all());
         return redirect()->route('transaction.index')->with('info', 'La transaction a bien été modifiée');
     }
@@ -97,7 +103,8 @@ class TransactionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Transaction $transaction) {
+    public function destroy(Transaction $transaction)
+    {
         $transaction->delete();
         return redirect()->route('transaction.index')->with('info', 'La transaction a bien été suprimée');
     }
