@@ -15,7 +15,7 @@ return new class extends Migration {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->string('intitule');
-            $table->string('description');
+            $table->string('description', 300);
             $table->decimal('montant', 10, 2);
             $table->enum('sens_transaction', ['entrant', 'sortant']);
 
