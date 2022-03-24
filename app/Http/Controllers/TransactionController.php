@@ -31,10 +31,8 @@ class TransactionController extends Controller
     public function create()
     {
         $categories = Categorie::all();
-        $users = User::all();
-        $comptes = Compte::all();
 
-        return view('transaction/create', compact('categories', 'users', 'comptes'));
+        return view('transaction/create', compact('categories'));
     }
 
     /**
