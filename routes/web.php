@@ -24,6 +24,14 @@ Route::get('/dashboard', function () {
 
 require __DIR__ . '/auth.php';
 
-Route::resource('transaction', TransactionController::class);
+Route::group(['middleware' => ['auth']], function () {
 
-require __DIR__ . '/compte.php';
+    //Comptes
+    Route::get('/', function () {
+        return view('compte/index');
+    })->name('compte.index');
+
+    // Transactions
+    Route::resource('transaction', TransactionController::class);
+
+});
