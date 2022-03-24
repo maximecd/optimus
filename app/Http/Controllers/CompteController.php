@@ -54,7 +54,7 @@ class CompteController extends Controller
      */
     public function show(Compte $compte)
 {
-    $transactions = Transaction::all();
+    $transactions = Transaction::where('id_compte', $compte->id)->get();
     return view('compte/dashboard', compact('compte','transactions'));
 }
 
