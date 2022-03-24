@@ -13,10 +13,8 @@ use App\Http\Controllers\TransactionController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
 
-    return view('accueil');
-})->middleware(['auth'])->name('accueil');
+
 
 
 /*
@@ -27,3 +25,5 @@ Route::get('/dashboard', function () {
 require __DIR__ . '/auth.php';
 
 Route::resource('transaction', TransactionController::class);
+
+require __DIR__ . '/compte.php';

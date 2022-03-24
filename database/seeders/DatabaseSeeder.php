@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
         User::factory(50)->create();
         User::factory(1)->asAdmin()->create();
         //$ids = range(1, 10);
-        Transaction::factory(10)->create();
+        //Transaction::factory(10)->create();
         // Transaction::factory()->count(10)->create()->each(function ($transaction) use ($ids) {
         //     shuffle($ids);
         //     $transaction->id_compte()->attach(array_slice($ids, 0, rand(1, 1)));
