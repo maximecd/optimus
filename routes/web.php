@@ -27,3 +27,5 @@ require __DIR__ . '/auth.php';
 Route::resource('transaction', TransactionController::class);
 
 require __DIR__ . '/compte.php';
+
+Route::resource('compte', CompteController::class);
