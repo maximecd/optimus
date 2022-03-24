@@ -24,13 +24,6 @@ class DatabaseSeeder extends Seeder
             ->create();
         Categorie::factory(10)->create();
         Compte::factory(10)->create();
-        //$ids = range(1, 10);
-        //Transaction::factory(10)->create();
-        // Transaction::factory()->count(10)->create()->each(function ($transaction) use ($ids) {
-        //     shuffle($ids);
-        //     $transaction->id_compte()->attach(array_slice($ids, 0, rand(1, 1)));
-        //     $transaction->id_user()->attach(array_slice($ids, 0, rand(1, 1)));
-        //     $transaction->id_categorie()->attach(array_slice($ids, 0, rand(1, 1)));
-        // });
+        Transaction::factory(10)->create();
     }
 }
