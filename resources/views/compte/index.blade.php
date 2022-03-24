@@ -3,7 +3,7 @@
 @section('content')
     <div class="flex flex-nowrap">
         @foreach ($comptes as $compte)
-            <a href="#route-a-ajouter">
+            <a href="{{ route('compte.dashboard', $compte->id) }}">
                 <div class="mr-4 shadow rounded-xl w-[200px] h-[200px] bg-slate-50 p-3 flex flex-col justify-between">
                     <p class="text-lg font-bold"> {{ $compte->intitule }}</p>
                     <p class="text-cyan-600 self-end">Accéder ➟</p>

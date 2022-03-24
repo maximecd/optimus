@@ -53,7 +53,7 @@ class CompteController extends Controller
      */
     public function show(Compte $compte)
 {
-    return view('compte/show', compact('compte'));
+    return view('compte/dashboard', compact('compte'));
 }
 
     /**
