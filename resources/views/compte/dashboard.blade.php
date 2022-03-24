@@ -4,11 +4,11 @@
 
 <h1 class="head-dashboard">Tableau de bord - {{ $compte->intitule }}</h1>
 
-<div class="solde">
-    <p>Votre solde :</p>
-</div>
-
 <div class="historique-transaction">
+    <div class="solde">
+        <p>Votre solde :</p>
+    </div>
+    
     @foreach ($transactions as $transaction)
     <tr>
         <td>{{ $transaction->id }}</td>
@@ -19,12 +19,4 @@
 @endforeach
 </div>
 
-<div class="depense-recette">
-    <div class="depense">
-        
-    </div>
-    <div class="recette">
-        
-    </div>
-</div>
 @endsection
