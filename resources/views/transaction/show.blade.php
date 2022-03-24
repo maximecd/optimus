@@ -7,6 +7,7 @@
         <p>Montant de la transaction : {{ $transaction->montant }}</p>
         <p>Catégorie de la transaction : {{ $transaction->id_categorie }}</p>
         <p>Utilisateur de la transaction : {{ $transaction->id_user }}</p>
+        <p>Compte de la transaction : {{ $transaction->id_compte }}</p>
     </div>
     <a href="{{ route('transaction.index') }}">Retour à la liste</a>
 @endsection

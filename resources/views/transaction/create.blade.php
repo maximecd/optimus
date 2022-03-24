@@ -74,17 +74,7 @@
             </div>
         </div>
 
-        <div>
-            <label>Users : </label>
-            <div>
-                <select name="id_user">
-                    @foreach ($users as $user)
-                        <option value="{{ $user->id }}">
-                            {{ $user->name }}</option>
-                    @endforeach
-                </select>
-            </div>
-        </div>
+
 
         <div>
             <div>
