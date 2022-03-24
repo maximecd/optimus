@@ -26,6 +26,7 @@ require __DIR__ . '/auth.php';
 
 Route::group(['middleware' => ['auth']], function () {
 
+<<<<<<< HEAD
     //Comptes
     Route::get('/', function () {
         return view('compte/index');
@@ -35,3 +36,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('transaction', TransactionController::class);
 
 });
+=======
+require __DIR__ . '/compte.php';
+
+Route::resource('compte', CompteController::class);
+>>>>>>> b83a371a5a28afbd46cd689c40bfade7a712592e
