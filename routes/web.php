@@ -14,14 +14,10 @@ use App\Http\Controllers\TransactionController;
 |
 */
 Route::get('/', function () {
-<<<<<<< HEAD
-    return view('comptes.index');
-})->middleware(['auth'])->name('comptes');
 
-=======
     return view('accueil');
 })->middleware(['auth'])->name('accueil');
->>>>>>> 9a70971118c269f73a28c63c31d16f120bb331f5
+
 
 /*
 Route::get('/dashboard', function () {
