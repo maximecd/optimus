@@ -39,7 +39,7 @@
                         <label for="montant">Montant de la transaction</label>
 
                         <div>
-                            <input id="montant" name="montant" placeholder="Montant de la transaction"
+                            <input type="number" step="0.01" id="montant" name="montant" placeholder="Montant de la transaction"
                                 value="{{ old('montant', $transaction->montant) }}">
                         </div>
                         @error('montant')
