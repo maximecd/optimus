@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -14,10 +15,13 @@ class CompteFactory extends Factory
      *
      * @return array<string, mixed>
      */
+    
     public function definition()
     {
+        $users = User::all()->pluck('id')->toArray();
         return [
             'intitule' => "Compte n° " . $this->faker->unique->numberBetween(1,50) ,
+            'id_admin' => $this->faker->randomElement($users),
         ];
     }
 }

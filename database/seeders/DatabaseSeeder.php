@@ -23,10 +23,7 @@ class DatabaseSeeder extends Seeder
             ->asAdmin()
             ->create();
         Categorie::factory(10)->create();
-        Compte::factory()
-            ->has(User::factory()->count(5))
-            ->count(10)
-            ->create();
+        Compte::factory(10)->create();
         //$ids = range(1, 10);
         //Transaction::factory(10)->create();
         // Transaction::factory()->count(10)->create()->each(function ($transaction) use ($ids) {
