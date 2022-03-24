@@ -6,7 +6,7 @@
 
 <div class="historique-transaction">
     <div class="solde">
-        <p>Votre solde :</p>
+        <p>Votre solde : {{$solde}}</p> 
     </div>
     
     @foreach ($transactions as $transaction)

@@ -16,12 +16,11 @@ class CompteController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    { 
-        
-        $comptes = Compte::where('id_admin',Auth::id())->get();
+    {
+        $comptes = Compte::where('id_admin', Auth::id())->get();
         return view('compte/index', compact('comptes'));
     }
-    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -38,13 +37,15 @@ class CompteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CompteRequest  $request, Compte $compte)
-{
-    $compte->intitule=$request->intitule;
-    $compte->id_admin=$request=Auth::id();
-    $compte->save();
-    return redirect()->route('compte.index')->with('info','Le compte ' . $compte->intitule . ' a été créé');
-}
+    public function store(CompteRequest $request, Compte $compte)
+    {
+        $compte->intitule = $request->intitule;
+        $compte->id_admin = $request = Auth::id();
+        $compte->save();
+        return redirect()
+            ->route('compte.index')
+            ->with('info', 'Le compte ' . $compte->intitule . ' a été créé');
+    }
 
     /**
      * Display the specified resource.
@@ -53,10 +54,12 @@ class CompteController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Compte $compte)
-{
-    $transactions = Transaction::where('id_compte', $compte->id)->get();
-    return view('compte/dashboard', compact('compte','transactions'));
-}
+    {
+        require __DIR__.'../../../Support/Solde.php';
+        $transactions = Transaction::where('id_compte', $compte->id)->get();
+        $solde = getSolde($transactions);
+        return view('compte/dashboard', compact('compte', 'transactions', 'solde'));
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -64,7 +67,8 @@ class CompteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Compte $trancomptesaction) {
+    public function edit(Compte $trancomptesaction)
+    {
         return view('compte/edit', compact('compte'));
     }
 
@@ -75,9 +79,12 @@ class CompteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CompteRequest $request, Compte $compte) {
+    public function update(CompteRequest $request, Compte $compte)
+    {
         $compte->update($request->all());
-        return redirect()->route('compte.index')->with('info', 'Le compte a bien été modifié');
+        return redirect()
+            ->route('compte.index')
+            ->with('info', 'Le compte a bien été modifié');
     }
 
     /**
@@ -86,8 +93,11 @@ class CompteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Compte $compte) {
+    public function destroy(Compte $compte)
+    {
         $compte->delete();
-        return redirect()->route('compte.index')->with('info', 'Le compte a bien été suprimé');
+        return redirect()
+            ->route('compte.index')
+            ->with('info', 'Le compte a bien été suprimé');
     }
 }

@@ -3,7 +3,7 @@
 /**
  * @param Transaction[] $transactions
  */
-function getSolde(array $transactions)
+function getSolde($transactions)
 {
 
     $solde = 0;
