@@ -28,7 +28,7 @@
         <div>
             <label>Montant de la transaction</label>
             <div>
-                <input type="text" size="100" name="montant" placeholder="Montant de la transaction"
+                <input type="number" step="0.01" size="100" name="montant" placeholder="Montant de la transaction"
                     value="{{ old('montant') }}">
             </div>
             @error('montant')
