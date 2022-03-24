@@ -63,20 +63,6 @@
         </div>
 
         <div>
-            <label>Comptes : </label>
-            <div>
-                <select name="id_compte">
-                    @foreach ($comptes as $compte)
-                        <option value="{{ $compte->id }}">
-                            {{ $compte->intitule }}</option>
-                    @endforeach
-                </select>
-            </div>
-        </div>
-
-
-
-        <div>
             <div>
                 <button>Envoyer</button>
 
