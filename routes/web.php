@@ -14,13 +14,20 @@ use App\Http\Controllers\TransactionController;
 |
 */
 Route::get('/', function () {
+<<<<<<< HEAD
     return view('comptes.index');
 })->middleware(['auth'])->name('comptes');
 
+=======
+    return view('accueil');
+})->middleware(['auth'])->name('accueil');
+>>>>>>> 9a70971118c269f73a28c63c31d16f120bb331f5
 
+/*
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->middleware(['auth'])->name('dashboard'); */
 
-require __DIR__.'/auth.php';
-Route::resource('transaction',TransactionController::class);
+require __DIR__ . '/auth.php';
+
+Route::resource('transaction', TransactionController::class);
