@@ -34,5 +34,4 @@ Route::group(['middleware' => ['auth']], function () {
     // Transactions
     Route::resource('transaction', TransactionController::class);
 
-    
 });
