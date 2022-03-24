@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Transaction;
 use App\Http\Requests\TransactionRequest;
+use App\Models\Categorie;
+use App\Models\User;
+use App\Models\Compte;
 
 class TransactionController extends Controller
 {
@@ -26,7 +29,11 @@ class TransactionController extends Controller
      */
     public function create()
     {
-        return view('transaction/create');
+        $categories = Categorie::all();
+        $users = User::all();
+        $comptes = Compte::all();
+
+        return view('transaction/create', compact('categories', 'users', 'comptes'));
     }
 
     /**
@@ -66,7 +73,10 @@ class TransactionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Transaction $transaction) {
-        return view('transaction/edit', compact('transaction'));
+        $categories = Categorie::all();
+        $users = User::all();
+        $comptes = Compte::all();
+        return view('transaction/edit', compact('transaction', 'categories', 'users', 'comptes'));
     }
 
     /**

@@ -40,7 +40,7 @@ class CompteController extends Controller
     public function store(CompteRequest  $request, Compte $compte)
 {
     $compte->intitule=$request->intitule;
-
+    $compte->id_admin=$request=Auth::id();
     $compte->save();
     return redirect()->route('compte.index')->with('info','Le compte ' . $compte->intitule . ' a été créé');
 }

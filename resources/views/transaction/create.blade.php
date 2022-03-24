@@ -37,6 +37,56 @@
         </div>
 
         <div>
+            <label>Sens de la transaction : </label>
+            <div>
+                <select name="sens_transaction">
+                    <option value="entrant">Entrant</option>
+                    <option value="sortant">Sortant</option>
+
+                </select>
+            </div>
+            @error('sens_transaction')
+                <p>{{ $message }}</p>
+            @enderror
+        </div>
+
+        <div>
+            <label>Categorie : </label>
+            <div>
+                <select name="id_categorie">
+                    @foreach ($categories as $categorie)
+                        <option value="{{ $categorie->id }}">
+                            {{ $categorie->intitule }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
+
+        <div>
+            <label>Comptes : </label>
+            <div>
+                <select name="id_compte">
+                    @foreach ($comptes as $compte)
+                        <option value="{{ $compte->id }}">
+                            {{ $compte->intitule }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
+
+        <div>
+            <label>Users : </label>
+            <div>
+                <select name="id_user">
+                    @foreach ($users as $user)
+                        <option value="{{ $user->id }}">
+                            {{ $user->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
+
+        <div>
             <div>
                 <button>Envoyer</button>
 
