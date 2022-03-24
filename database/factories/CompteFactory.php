@@ -17,7 +17,7 @@ class CompteFactory extends Factory
     public function definition()
     {
         return [
-            'intitulé' => "Compte n° " . $this->faker->unique->numberBetween(1,50) ,
+            'intitule' => "Compte n° " . $this->faker->unique->numberBetween(1,50) ,
         ];
     }
 }
