@@ -11,7 +11,7 @@
     <td> | <strong>{{ $compte->intitule }}</strong></td>
     </form>
     </td>
-</tr>
+</tr><br>
 @endforeach
 
 
