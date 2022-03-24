@@ -65,10 +65,10 @@
                         <form method="GET" action="{{ route('user.settings') }}">
                             @csrf
 
-                            <x-dropdown-link :href="route('user.settings')" onclick="event.preventDefault();
+                          <!--  <x-dropdown-link : href="route('user.settings')" onclick="event.preventDefault();
                             this.closest('form').submit();">
-                                {{ __('Paramètres') }}
-                            </x-dropdown-link>
+                                { __('Paramètres') }}
+                            </x-dropdown-link> -->
 
                         </form>
                     </x-slot>
