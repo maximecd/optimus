@@ -19,7 +19,7 @@
             <div>
                 <button>Envoyer</button>
 
-                <a href="{{ route('compte.index') }}">Retour à la liste</a>
+                <a href="/">Retour à la liste</a>
             </div>
         </div>
     </form>

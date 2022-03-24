@@ -30,6 +30,7 @@ Route::group(['middleware' => ['auth']], function () {
     //Comptes
     Route::get('/', [CompteController::class,'index']);
     Route::resource('compte', CompteController::class);
+    Route::get('compte/{id}', [CompteController::class,'dashboard'])->name('compte.dashboard');
 
     // Transactions
     Route::resource('transaction', TransactionController::class);
