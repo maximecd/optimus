@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\CompteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,9 +28,8 @@ require __DIR__ . '/auth.php';
 Route::group(['middleware' => ['auth']], function () {
 
     //Comptes
-    Route::get('/', function () {
-        return view('compte/index');
-    })->name('compte.index');
+    Route::get('/', [CompteController::class,'index']);
+    Route::resource('compte', CompteController::class);
 
     // Transactions
     Route::resource('transaction', TransactionController::class);

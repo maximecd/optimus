@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Compte;
 use Illuminate\Http\Request;
 use App\Http\Requests\CompteRequest;
+use Illuminate\Support\Facades\Auth;
 
 class CompteController extends Controller
 {
@@ -14,8 +15,9 @@ class CompteController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $comptes = Compte::all();
+    { 
+        
+        $comptes = Compte::where('id_admin',Auth::id())->get();
         return view('compte/index', compact('comptes'));
     }
     
