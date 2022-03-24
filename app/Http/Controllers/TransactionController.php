@@ -28,11 +28,10 @@ class TransactionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id_compte)
     {
         $categories = Categorie::all();
-
-        return view('transaction/create', compact('categories'));
+        return view('transaction/create', compact('categories', 'id_compte'));
     }
 
     /**
@@ -41,17 +40,17 @@ class TransactionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(TransactionRequest  $request, Transaction $transaction)
+    public function store($id_compte, TransactionRequest $request, Transaction $transaction)
     {
         $transaction->intitule = $request->intitule;
         $transaction->description = $request->description;
         $transaction->montant = $request->montant;
         $transaction->sens_transaction = $request->sens_transaction;
-        $transaction->id_compte = $request->id_compte;
+        $transaction->id_compte = $id_compte;
         $transaction->id_user = Auth::id();
         $transaction->id_categorie = $request->id_categorie;
         $transaction->save();
-        return redirect()->route('transaction.index')->with('info', 'La transaction ' . $transaction->intitule . ' a été créée');
+        return redirect()->route('compte.dashboard', $id_compte)->with('info', 'La transaction ' . $transaction->intitule . ' a été créée');
     }
 
     /**

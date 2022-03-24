@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <a class="button is-info" href="{{ route('transaction.create') }}">Créer une transaction</a>
+    <a class="button is-info" href="{{ route('transaction.create' . $id) }}">Créer une transaction</a>
 
     <div>
         <table>

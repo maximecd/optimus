@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <form action="{{ route('transaction.store') }}" method="POST">
+    <form action="{{ route('transaction.store', $id_compte) }}" method="POST">
         @csrf
         <div>
             <label>Intitulé de la transaction</label>
@@ -66,7 +66,7 @@
             <div>
                 <button>Envoyer</button>
 
-                <a href="{{ route('transaction.index') }}">Retour à la liste</a>
+                <a href="{{ route('compte.dashboard', $id_compte) }}">Retour au compte</a>
             </div>
         </div>
     </form>

@@ -33,6 +33,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('compte/{id}', [CompteController::class,'dashboard'])->name('compte.dashboard');
 
     // Transactions
-    Route::resource('transaction', TransactionController::class);
+
+    Route::get('compte/{id}/transaction/ajouter', [TransactionController::class,'create'])->name('transaction.create');
+    Route::post('compte/{id}/transaction/ajouter', [TransactionController::class,'store'])->name('transaction.store');
+
 
 });

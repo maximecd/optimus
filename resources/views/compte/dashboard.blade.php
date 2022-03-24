@@ -19,4 +19,6 @@
 @endforeach
 </div>
 
+<a href="{{ route('transaction.create', $compte->id) }}">Ajouter</a>
+
 @endsection
