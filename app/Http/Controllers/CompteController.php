@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Compte;
 use Illuminate\Http\Request;
 use App\Http\Requests\CompteRequest;
+use App\Models\Transaction;
 use Illuminate\Support\Facades\Auth;
 
 class CompteController extends Controller
@@ -53,7 +54,8 @@ class CompteController extends Controller
      */
     public function show(Compte $compte)
 {
-    return view('compte/dashboard', compact('compte'));
+    $transactions = Transaction::where('id_compte', $compte->id)->get();
+    return view('compte/dashboard', compact('compte','transactions'));
 }
 
     /**

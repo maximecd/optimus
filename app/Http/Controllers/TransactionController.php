@@ -31,10 +31,8 @@ class TransactionController extends Controller
     public function create()
     {
         $categories = Categorie::all();
-        $users = User::all();
-        $comptes = Compte::all();
 
-        return view('transaction/create', compact('categories', 'users', 'comptes'));
+        return view('transaction/create', compact('categories'));
     }
 
     /**
@@ -64,10 +62,7 @@ class TransactionController extends Controller
      */
     public function show(Transaction $transaction)
     {
-        $categories = Categorie::all();
-        $users = User::all();
-        $comptes = Compte::all();
-        return view('transaction/show', compact('transaction', 'categories', 'users', 'comptes'));
+        return view('transaction/show', compact('transaction'));
     }
 
     /**
@@ -79,9 +74,7 @@ class TransactionController extends Controller
     public function edit(Transaction $transaction)
     {
         $categories = Categorie::all();
-        $users = User::all();
-        $comptes = Compte::all();
-        return view('transaction/edit', compact('transaction', 'categories', 'users', 'comptes'));
+        return view('transaction/edit', compact('transaction', 'categories'));
     }
 
     /**
