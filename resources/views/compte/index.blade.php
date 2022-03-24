@@ -2,22 +2,19 @@
 
 @section('content')
 
-<a class="button is-info" href="{{ route('compte.create') }}">Créer un compte</a> <br><br>
+    @foreach ($comptes as $compte)
+        <a href="#route-a-ajouter">
+            <div class="shadow rounded-xl w-[200px] h-[200px] bg-slate-50 p-3 flex flex-col justify-between">
+                <p class="text-lg font-bold"> {{ $compte->intitule }}</p>
+                <p class="text-cyan-600 self-end">Accéder ➟</p>
+            </div>
+        </a>
+    @endforeach
 
+    <a href="{{ route('compte.create') }}">
+        <div class="shadow rounded-xl w-[200px] h-[200px] bg-slate-50 p-3 flex justify-center items-center">
+            <p class="text-cyan-600 self-end">+</p>
+        </div>
+    </a>
 
-@foreach($comptes as $compte)
-<tr>
-    <td> id : {{ $compte->id }}</td>
-    <td> | <strong>{{ $compte->intitule }}</strong></td>
-    </form>
-    </td>
-</tr>
-@endforeach
-
-
-</div>
-<footer class="card-footer">
-
-</footer>
-</div>
 @endsection
