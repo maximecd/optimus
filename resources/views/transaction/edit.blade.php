@@ -4,7 +4,7 @@
     <div>
         <div>
             <div>
-                <form method="POST" action="{{ route('transaction.update', $transaction->id) }}">
+                <form method="POST" action="{{ route('transaction.update', [$compte->id, 'id_transaction' => $transaction->id]) }}">
                     {{ csrf_field() }}
 
                     {{ method_field('PUT') }}

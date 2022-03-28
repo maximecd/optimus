@@ -70,10 +70,10 @@ class TransactionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Transaction $transaction)
+    public function edit($id_compte, Transaction $transaction)
     {
         $categories = Categorie::all();
-        return view('transaction/edit', compact('transaction', 'categories'));
+        return view('transaction/edit', compact('transaction', 'categories','id_compte' ));
     }
 
     /**
@@ -83,10 +83,10 @@ class TransactionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(TransactionRequest $request, Transaction $transaction)
+    public function update($id_compte, TransactionRequest $request, Transaction $transaction)
     {
-        $transaction->update($request->all());
-        return redirect()->route('transaction.index')->with('info', 'La transaction a bien été modifiée');
+        $transaction->update($id_compte, $request->all());
+        return redirect()->route('compte.dashboard', $id_compte)->with('info', 'La transaction a bien été modifiée');
     }
 
     /**

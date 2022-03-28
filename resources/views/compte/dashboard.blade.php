@@ -16,6 +16,7 @@
                         <th class="p-3">Intitulé</th>
                         <th class="p-3">Categorie</th>
                         <th class="p-3">Description</th>
+                        <th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,8 +28,10 @@
                                 {{ $transaction->sens_transaction == 'entrant' ? '+' : '-' }}{{ $transaction->montant }}€
                             </td>
                             <td class="p-3">{{ $transaction->intitule }}</td>
-                            <td class="p-3">Categ</td>
+                            <td class="p-3">Categ *à récupérer*</td>
                             <td class="p-3">{{ $transaction->description }}</td>
+                            <td class="p-3">{{ $transaction->description }}</td>
+
                         </tr>
                     @endforeach
                 </tbody>
