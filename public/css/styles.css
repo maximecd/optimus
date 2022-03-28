@@ -1,0 +1,17 @@
+.dashboard-container {
+ 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 25px;
+}
+
+.historique-transaction {
+  grid-area: 1 / 1 / 3 / 2;
+}
+.ajouter-transaction {
+  grid-area: 1 / 2 / 2 / 3;
+}
+.settings {
+  grid-area: 2 / 2 / 3 / 3;
+}

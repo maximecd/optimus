@@ -13,16 +13,18 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 <body">
     <div class="App">
+       
         @include('layouts.navigation')
 
 
-        <div class="max-w-7xl mx-auto p-8">
+        <div class="max-w-7xl mx-auto pt-8 px-8">
             @yield('info-message')
             @yield('content')
         </div>
