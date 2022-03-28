@@ -4,7 +4,7 @@
     <h1 class="dashboard-title text-center">Tableau de bord - {{ $compte->intitule }}</h1>
 
     <div class="dashboard-container h-full">
-      
+
 
         <div class="historique-transaction bg-gray-50 p-8 shadow-lg rounded-lg">
             <p class="mb-8 text-lg font-bold">Votre solde : {{ $solde }}€</p>
@@ -16,7 +16,8 @@
                         <th class="p-3">Intitulé</th>
                         <th class="p-3">Categorie</th>
                         <th class="p-3">Description</th>
-                        <th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,8 +31,18 @@
                             <td class="p-3">{{ $transaction->intitule }}</td>
                             <td class="p-3">Categ *à récupérer*</td>
                             <td class="p-3">{{ $transaction->description }}</td>
-                            <td class="p-3">{{ $transaction->description }}</td>
-
+                            <td><a
+                                    href="{{ route('transaction.edit', [$compte->id, 'id_transaction' => $transaction->id]) }}">Modifier</a>
+                            </td>
+                            <td>
+                                <form
+                                    action="{{ route('transaction.destroy', [$compte->id, 'id_transaction' => $transaction->id]) }}"
+                                    method="post">
+                                    {{ csrf_field() }}
+                                    {{ method_field('DELETE') }}
+                                    <button type="submit">Supprimer</button>
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -45,5 +56,4 @@
 
         </div>
     </div>
-
 @endsection
