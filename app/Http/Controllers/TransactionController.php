@@ -70,10 +70,10 @@ class TransactionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Transaction $transaction)
+    public function edit($id_compte,Transaction $transaction)
     {
         $categories = Categorie::all();
-        return view('transaction/edit', compact('transaction', 'categories'));
+        return view('transaction/edit', compact('transaction', 'categories','id_compte' ));
     }
 
     /**
