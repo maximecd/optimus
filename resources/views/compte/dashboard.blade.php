@@ -15,9 +15,9 @@
         <td><strong>{{ $transaction->intitule }}</strong></td>
         <td><strong>{{ $transaction->description }}</strong></td>
         <td><strong>{{ $transaction->montant }}</strong></td>
-        <td><a href="{{ route('transaction.edit', $transaction->id_transaction) }}">Modifier</a></td>
+        <td><a href="{{ route('transaction.edit',[$compte->id, 'id_transaction' => $transaction->id]) }}">Modifier</a></td>
         <td>
-            <form action="{{ route('transaction.destroy', $transaction->id_transaction) }}" method="post">
+            <form action="{{ route('transaction.destroy',[$compte->id, 'id_transaction' => $transaction->id]) }}" method="post">
                 {{ csrf_field() }}
                 {{ method_field('DELETE') }}
                 <button type="submit">Supprimer</button>
