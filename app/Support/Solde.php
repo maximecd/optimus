@@ -14,5 +14,5 @@ function getSolde($transactions)
             $solde -= $t->montant;
         }
     }
-    return $solde;
+    return number_format($solde, 2);
 }
