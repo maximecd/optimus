@@ -17,7 +17,8 @@ class CategorieFactory extends Factory
     public function definition()
     {
         return [
-            'intitule' => $this->faker->text(15),
+            'intitule' => 'intitule',
         ];
     }
+    
 }

@@ -22,7 +22,13 @@ class DatabaseSeeder extends Seeder
         User::factory(1)
             ->asAdmin()
             ->create();
-        Categorie::factory(10)->create();
+
+        $categories = ['Alimentation', 'Loisirs', 'Transports', 'Restauration', 'Loyer', 'Salaire'];
+        foreach($categories as $category) {
+            Categorie::factory()->create([
+              'intitule' => $category,
+            ]);
+          }
         Compte::factory(10)->create();
         Transaction::factory(10)->create();
     }
