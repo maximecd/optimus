@@ -61,6 +61,7 @@
                         <label>Sens de la transaction : </label>
                         <div>
                             <select name="sens_transaction">
+                                <option value="{{ old('sens_transaction', $transaction->sens_transaction) }}">{{ old('sens_transaction', $transaction->sens_transaction) }}</option>
                                 <option value="entrant">Entrant</option>
                                 <option value="sortant">Sortant</option>
 
@@ -76,11 +77,28 @@
                         <div>
                             <select name="id_categorie">
                                 @foreach ($categories as $categorie)
+                                @if ($categorie->id==old('id_categorie', $transaction->id_categorie) )
+                                <option value="{{ $categorie->id }}">
+                                    {{ $categorie->intitule }}</option>
+                                @endif
+                                @endforeach
+                                @foreach ($categories as $categorie)
                                     <option value="{{ $categorie->id }}">
                                         {{ $categorie->intitule }}</option>
                                 @endforeach
                             </select>
                         </div>
+                    </div>
+
+                    <div>
+                        <label>Date de la transaction</label>
+                        <div>
+                            <input class="create-trans" type="date" size="100" name="date" 
+                                value="{{ old('date', $transaction->date) }}">
+                        </div>
+                        @error('date')
+                            <p>{{ $message }}</p>
+                        @enderror
                     </div>
 
 
@@ -89,7 +107,7 @@
                             <button type="submit">
                                 Enregistrer
                             </button>
-                            <a href="z">Retour à la liste</a>
+                            <a href="{{ route('compte.dashboard', $compte) }}">Retour à la liste</a>
                         </div>
                     </div>
                 </form>
