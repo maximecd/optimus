@@ -10,36 +10,47 @@
             <p class="mb-8 text-lg font-bold">Votre solde : {{ $solde }}€</p>
 
             <table class="table-auto w-full rounded-lg">
-                <thead>
-                    <tr class="text-left bg-gray-100">
-                        <th class="p-3">Montant</th>
-                        <th class="p-3">Intitulé</th>
-                        <th class="p-3">Categorie</th>
-                        <th class="p-3">Description</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
+                <!-- <thead>
+                                                        <tr class="text-left bg-gray-100">
+                                                            <th class="p-3">Montant</th>
+                                                            <th class="p-3">Intitulé</th>
+                                                            <th class="p-3">Categorie</th>
+                                                            <th class="p-3">Description</th>
+                                                            <th></th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead> -->
                 <tbody>
                     @foreach ($transactions as $transaction)
-                        
-                        <tr
-                            class="border-b
-                    {{ $transaction->sens_transaction == 'entrant' ? 'bg-green-100' : 'bg-red-100' }}">
-                            <td class="p-3">
+                        <tr class="border-t">
+                            <td
+                                class="{{ $transaction->sens_transaction == 'entrant' ? 'text-green-600' : 'text-red-600' }}">
                                 {{ $transaction->sens_transaction == 'entrant' ? '+' : '-' }}{{ $transaction->montant }}€
                             </td>
-                            <td class="p-3">{{ $transaction->intitule }}</td>
-                            <td class="p-3">Categ *à récupérer*</td>
-                            <td class="p-3">{{ $transaction->description }}</td>
-                            <td><a
-                                    href="{{ route('transaction.edit', ['id' => $compte, 'id_transaction' => $transaction]) }}" class="icon-btn btn-edit">📝
-                                </a>
-                            </td>
-                            <td>
-                                <a href="{{ route('transaction.destroy', [$compte->id, 'id_transaction' => $transaction]) }}" class="icon-btn btn-supp mr-2">X</a>
-                                </form>
-                            </td>
+
+                            <td class="text-right font-semibold" colspan="2">{{ $transaction->intitule }}</td>
+
+
+                        </tr>
+                        <tr>
+                            <td>Catégorie</td>
+
+                            <td class="text-right">route.show</td>
+
+                            
+                        </tr>
+                        <tr class="border-b">
+                            <td class="text-sm text-gray-500">Le XX/XX/XX</td>
+                            <td class="text-right"><a class="mr-2"
+                                href="{{ route('transaction.edit', ['id' => $compte, 'id_transaction' => $transaction]) }}">
+                                Modifier
+                            </a>
+                            <a
+                                href="{{ route('transaction.destroy', [$compte->id, 'id_transaction' => $transaction]) }}">
+                                Supprimer
+                            </a>
+
+                        </td>
                         </tr>
                     @endforeach
                 </tbody>

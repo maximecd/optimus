@@ -77,7 +77,7 @@
                         <div>
                             <select name="id_categorie">
                                 @foreach ($categories as $categorie)
-                                    <option value="{{ $categorie->id }}">
+                                    <option  {{ $transaction->id_categorie == $categorie->id ? 'selected' : '' }}  value="{{ $categorie->id }}">
                                         {{ $categorie->intitule }}</option>
                                 @endforeach
                             </select>
@@ -90,7 +90,7 @@
                             <button type="submit">
                                 Enregistrer
                             </button>
-                            <a href="z">Retour à la liste</a>
+                            <a href="{{ route('compte.dashboard', $compte->id)  }}">Retour à la liste</a>
                         </div>
                     </div>
                 </form>
