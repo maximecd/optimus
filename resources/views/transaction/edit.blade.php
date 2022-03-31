@@ -6,16 +6,15 @@
             <div>
                <?php
 
-                echo $transaction->first()->intitule;
+              
 
                ?>
                 
 
                 
-                <form action=""
+                <form action="{{ route('transaction.update', ['id' => $compte, 'id_transaction' => $transaction]) }}"
                     method="POST">
                     {{ csrf_field() }}
-
                     {{ method_field('PUT') }}
 
 
