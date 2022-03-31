@@ -14,7 +14,7 @@
 
                     <div>
                         <input id="intitule" name="intitule" placeholder="Nom du compte"
-                            value="{{ old('intitule', $transaction->intitule) }}">
+                            value="{{ old('intitule', $compte->intitule) }}">
                     </div>
                     @error('intitule')
                     <p>Le nom du compte est incorrect</p>

@@ -61,10 +61,10 @@
                         <label>Sens de la transaction : </label>
                         <div>
                             <select name="sens_transaction">
-                                <option value="{{ old('sens_transaction', $transaction->sens_transaction) }}">{{ old('sens_transaction', $transaction->sens_transaction) }}</option>
-                                <option value="entrant">Entrant</option>
-                                <option value="sortant">Sortant</option>
+                                <option {{ $transaction->sens_transaction == 'entrant' ? 'selected' : '' }} value="entrant">Entrant</option>
+                                <option {{ $transaction->sens_transaction == 'sortant' ? 'selected' : '' }} value="sortant">Sortant</option>
 
+                                
                             </select>
                         </div>
                         @error('sens_transaction')
@@ -77,13 +77,7 @@
                         <div>
                             <select name="id_categorie">
                                 @foreach ($categories as $categorie)
-                                @if ($categorie->id==old('id_categorie', $transaction->id_categorie) )
-                                <option value="{{ $categorie->id }}">
-                                    {{ $categorie->intitule }}</option>
-                                @endif
-                                @endforeach
-                                @foreach ($categories as $categorie)
-                                    <option value="{{ $categorie->id }}">
+                                    <option  {{ $transaction->id_categorie == $categorie->id ? 'selected' : '' }}  value="{{ $categorie->id }}">
                                         {{ $categorie->intitule }}</option>
                                 @endforeach
                             </select>
@@ -107,7 +101,7 @@
                             <button type="submit">
                                 Enregistrer
                             </button>
-                            <a href="{{ route('compte.dashboard', $compte) }}">Retour à la liste</a>
+                            <a href="{{ route('compte.dashboard', $compte->id)  }}">Retour à la liste</a>
                         </div>
                     </div>
                 </form>
