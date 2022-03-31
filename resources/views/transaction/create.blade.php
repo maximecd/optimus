@@ -1,84 +1,127 @@
 @extends('layouts.app')
 
 @section('content')
-    <form action="{{ route('transaction.store', $id_compte) }}" method="POST">
-        @csrf
-        <div>
-            <label>Intitulé de la transaction</label>
-            <div>
-                <input class="create-trans" type="text" size="100" name="intitule" placeholder="intitulé de la transaction"
-                    value="{{ old('intitule') }}">
-            </div>
-            @error('intitule')
-                <p>{{ $message }}</p>
-            @enderror
-        </div>
+<div class="flex justify-center items-center h-screen">
+    <div class="w-1/3 m-auto ">
+        <form action="{{ route('transaction.store', $id_compte) }}" method="POST">
+            @csrf
+            <div class="p-5">
 
-        <div>
-            <label>Categorie : </label>
-            <div>
-                <select name="id_categorie">
-                    @foreach ($categories as $categorie)
+                <div class="bg-gray-200 flex space-between items-center p-5 rounded-lg w-full">
+                    <div class="w-1/3">
+                        <label>Intitulé : </label>
+                    </div>
+                    <div class="w-2/3">
+                        <input
+                            class="border-transparent shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            name="intitule" type="text" placeholder="Intitulé" value="{{ old('intitule') }}">
+                    </div>
+                </div>
+                @error('intitule')
+                <p>{{ $message }}</p>
+                @enderror
+            </div>
+
+            <div class="p-5">
+
+                <div class="bg-gray-200 flex space-between items-center p-5 rounded-lg w-full">
+                    <div class="w-1/3">
+                    <label>Categorie : </label>
+                    </div>
+                    <div class="w-2/3">
+                        <select
+                        class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        name="id_categorie">
+                        @foreach ($categories as $categorie)
                         <option value="{{ $categorie->id }}">
                             {{ $categorie->intitule }}</option>
-                    @endforeach
-                </select>
+                        @endforeach
+                    </select>
+                    </div>
+                    
+                </div>
             </div>
-        </div>
 
-        <div>
-            <label>Description de la transaction</label>
-            <div>
-                <input class="create-trans" type="text" size="100" name="description" placeholder="Description de la transaction"
-                    value="{{ old('description') }}">
-            </div>
-            @error('description')
+            <div class="p-5">
+
+                <div class="bg-gray-200 flex space-between items-center p-5 rounded-lg w-full">
+                    <div class="w-1/3">
+                    <label>Description de la transaction</label>
+                    </div>
+                    <div class="w-2/3">
+                    <input
+                        class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        type="text" name="description" placeholder="Description de la transaction"
+                        value="{{ old('description') }}">
+                    </div>
+                </div>
+                @error('description')
                 <p>{{ $message }}</p>
-            @enderror
-        </div>
-
-        <div>
-            <label>Montant de la transaction</label>
-            <div>
-                <input class="create-trans" type="number" step="0.01" size="100" name="montant" placeholder="Montant de la transaction"
-                    value="{{ old('montant') }}">
+                @enderror
             </div>
-            @error('montant')
+
+            <div class="p-5">
+
+                <div class="bg-gray-200 flex space-between items-center p-5 rounded-lg w-full">
+                    <div class="w-1/3">
+                    <label>Montant de la transaction</label>
+                    </div>
+                    <div class="w-2/3">
+                    <input
+                        class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        type="number" step="0.01" size="100" name="montant" placeholder="Montant de la transaction"
+                        value="{{ old('montant') }}">
+                    </div>
+                </div>
+                @error('montant')
                 <p>{{ $message }}</p>
-            @enderror
-        </div>
-
-        <div>
-            <label>Sens de la transaction : </label>
-            <div>
-                <select name="sens_transaction">
-                    <option value="entrant">Entrant</option>
-                    <option value="sortant">Sortant</option>
-
-                </select>
+                @enderror
             </div>
-            @error('sens_transaction')
+
+            <div class="p-5">
+
+                <div class="bg-gray-200 flex space-between items-center p-5 rounded-lg w-full">
+                    <div class="w-1/3">
+                    <label>Sens de la transaction : </label>
+                    </div>
+                    <div class="w-2/3">
+                    <select name="sens_transaction"
+                        class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        <option value="entrant">Entrant</option>
+                        <option value="sortant">Sortant</option>
+
+                    </select>
+                    </div>
+                </div>
+                @error('sens_transaction')
                 <p>{{ $message }}</p>
-            @enderror
-        </div>
-
-        <div>
-            <label>Date de la transaction</label>
-            <div>
-                <input class="create-trans" type="date" size="100" name="date" 
-                    value="{{ old('date') }}">
+                @enderror
             </div>
-            @error('date')
+
+            <div class="p-5">
+
+                <div class="bg-gray-200 flex space-between items-center p-5 rounded-lg w-full">
+                    <div class="w-1/3">
+                    <label>Date de la transaction</label>
+                    </div>
+                    <div class="w-2/3">
+                    <input
+                        class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        type="date" size="100" name="date" value="{{ old('date') }}">
+                    </div>
+                </div>
+                @error('date')
                 <p>{{ $message }}</p>
-            @enderror
-        </div>
-
-        <div>
-            <div>
-                <button>Envoyer</button>
-
-                <a href="{{ route('compte.dashboard', $id_compte) }}">Retour au compte</a>
+                @enderror
             </div>
-        </div>
-    </form>
+
+            <div>
+                <div class="p-5">
+                    <button
+                        class="bg-green-400 rounded-lg m-auto w-full justify-center items-center p-5 text-white font-bold">Enregistrer</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 @endsection

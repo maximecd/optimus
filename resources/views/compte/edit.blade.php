@@ -12,7 +12,7 @@
 
                 <div class="bg-gray-200 flex justify-center items-center p-5 rounded-lg w-full">
                     <label for="intitule"><b>Nom du compte :</b></label>
-                    <input class="bg-transparent text-right" id="intitule" name="intitule" placeholder="Nom du compte"
+                    <input class=" " id="intitule" name="intitule" placeholder="Nom du compte"
                         value="{{ old('intitule', $compte->intitule) }}">
                 </div>
                 @error('intitule')
