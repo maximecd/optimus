@@ -85,10 +85,13 @@ class TransactionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Compte $compte, Transaction $transaction, TransactionRequest $request)
+    public function update($id_compte, $id_transaction, TransactionRequest $request)
     {
-        $transaction->update($transaction->id, $request->all());
-        return redirect()->route('compte.dashboard', $compte->id)->with('info', 'La transaction a bien été modifiée');
+        $transaction = Transaction::find($id_transaction);
+        $transaction->update($request->all());
+
+
+        return redirect()->route('compte.dashboard', $id_compte)->with('info', 'La transaction a bien été modifiée');
     }
 
     /**
