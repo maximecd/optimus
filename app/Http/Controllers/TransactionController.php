@@ -66,7 +66,11 @@ class TransactionController extends Controller
         $categorie = Categorie::find($transaction->id_categorie);
         $user = User::find($transaction->id_user);
         return view('transaction/show', compact('transaction', 'id_compte', 'categorie', 'user'));
+    
+    
     }
+
+
 
     /**
      * Show the form for editing the specified resource.

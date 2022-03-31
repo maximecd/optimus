@@ -56,6 +56,11 @@
                         </td>
                         </tr>
                     @endforeach
+                    @if (count($transactions) == 0)
+                        <tr>
+                            <td colspan="5" class=""><a class="text-purple-400 underline" href="{{ route('transaction.create', $compte->id) }}">Aucune transaction. Créez-en !</a></td>
+                        </tr>
+                    @endif
                 </tbody>
             </table>
 
