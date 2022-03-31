@@ -7,7 +7,7 @@
         <p>Montant de la transaction : {{ $transaction->montant }}</p>
         <p>Date de la transaction : {{ $transaction->date }}</p>
         <p>Sens de la transaction : {{ $transaction->sens_transaction }}</p>
-        <p>Catégorie de la transaction : {{ $transaction->id_categorie }}</p>
+        <p>Catégorie de la transaction : {{ $categorie->intitule }}</p>
         <p>Utilisateur de la transaction : {{ $transaction->id_user }}</p>
     </div>
     <a href="{{ route('compte.dashboard', $id_compte) }}">Retour au compte</a>
