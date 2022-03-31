@@ -31,6 +31,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/', [CompteController::class, 'index']);
     Route::resource('compte', CompteController::class);
     Route::get('compte/{id}', [CompteController::class, 'dashboard'])->name('compte.dashboard');
+    Route::get('compte/{id}/edit', [CompteController::class, 'edit'])->name('compte.edit');
 
     // Transactions
 
@@ -39,4 +40,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('compte/{id}/transaction/{id_transaction}/editer', [TransactionController::class, 'edit'])->name('transaction.edit');
     Route::put('compte/{id}/transaction/{id_transaction}/editer', [TransactionController::class, 'update'])->name('transaction.update');
     Route::post('compte/{id}/transaction/supprimer', [TransactionController::class, 'destroy'])->name('transaction.destroy');
+
+    
 });
