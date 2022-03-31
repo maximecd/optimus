@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="dashboard-title text-center">Tableau de bord - {{ $compte->intitule }}<a href="{{ route('compte.edit', $compte->id) }}"></a></h1>
+    <h1 class="dashboard-title text-center text-lg mb-10">Tableau de bord - {{ $compte->intitule }}</h1>
 
     <div class="dashboard-container h-full">
 

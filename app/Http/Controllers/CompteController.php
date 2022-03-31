@@ -53,9 +53,11 @@ class CompteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Compte $compte)
+    public function show($id_compte)
     {
         require __DIR__.'../../../Support/Solde.php';
+        $compte = Compte::where('id', $id_compte)->firstOrFail();
+
         $transactions = Transaction::where('id_compte', $compte->id)->get();
         $solde = getSolde($transactions);
         return view('compte/dashboard', compact('compte', 'transactions', 'solde'));
@@ -67,8 +69,10 @@ class CompteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Compte $compte)
+    public function edit($id_compte)
+
     {
+        $compte = Compte::where('id', $id_compte)->firstOrFail();
         return view('compte/edit', compact('compte'));
     }
 
