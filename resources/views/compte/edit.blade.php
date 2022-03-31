@@ -3,7 +3,7 @@
 @section('content')
 <div>
     <div>
-        <div>
+        <div class="compte-edit">
             <form method="POST" action="{{ route('compte.update', $compte->id) }}">
                 {{ csrf_field() }}
 
