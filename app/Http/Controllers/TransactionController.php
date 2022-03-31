@@ -101,9 +101,9 @@ class TransactionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Transaction $transaction)
+    public function destroy($id_compte, $id_transaction)
     {
-        $transaction->delete();
-        return redirect()->route('transaction.index')->with('info', 'La transaction a bien été suprimée');
+        Transaction::find($id_transaction)->delete();
+        return redirect()->route('compte.dashboard', $id_compte)->with('info', 'La transaction a bien été suprimée');
     }
 }

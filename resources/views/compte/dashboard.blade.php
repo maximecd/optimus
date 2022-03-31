@@ -46,7 +46,7 @@
                                 Modifier
                             </a>
                             <a
-                                href="{{ route('transaction.destroy', [$compte->id, 'id_transaction' => $transaction]) }}">
+                                href="{{ route('transaction.destroy', ['id' => $compte->id, 'id_transaction' => $transaction]) }}">
                                 Supprimer
                             </a>
 
