@@ -33,11 +33,11 @@
                             <td class="p-3">Categ *à récupérer*</td>
                             <td class="p-3">{{ $transaction->description }}</td>
                             <td><a
-                                    href="{{ route('transaction.edit', ['id' => $compte, 'id_transaction' => $transaction]) }}" class="btn-edit">📝
+                                    href="{{ route('transaction.edit', ['id' => $compte, 'id_transaction' => $transaction]) }}" class="icon-btn btn-edit">📝
                                 </a>
                             </td>
                             <td>
-                                <a href="{{ route('transaction.destroy', [$compte->id, 'id_transaction' => $transaction]) }}" class="btn-supp">X</a>
+                                <a href="{{ route('transaction.destroy', [$compte->id, 'id_transaction' => $transaction]) }}" class="icon-btn btn-supp mr-2">X</a>
                                 </form>
                             </td>
                         </tr>
