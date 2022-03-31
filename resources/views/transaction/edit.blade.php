@@ -61,9 +61,10 @@
                         <label>Sens de la transaction : </label>
                         <div>
                             <select name="sens_transaction">
-                                <option value="entrant">Entrant</option>
-                                <option value="sortant">Sortant</option>
+                                <option {{ $transaction->sens_transaction == 'entrant' ? 'selected' : '' }} value="entrant">Entrant</option>
+                                <option {{ $transaction->sens_transaction == 'sortant' ? 'selected' : '' }} value="sortant">Sortant</option>
 
+                                
                             </select>
                         </div>
                         @error('sens_transaction')
