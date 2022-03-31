@@ -64,7 +64,8 @@ class TransactionController extends Controller
     {
         $transaction = Transaction::find($id_transaction);
         $categorie = Categorie::find($transaction->id_categorie);
-        return view('transaction/show', compact('transaction', 'id_compte', 'categorie'));
+        $user = User::find($transaction->id_user);
+        return view('transaction/show', compact('transaction', 'id_compte', 'categorie', 'user'));
     }
 
     /**
