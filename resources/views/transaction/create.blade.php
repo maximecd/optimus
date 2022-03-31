@@ -6,7 +6,7 @@
         <div>
             <label>Intitulé de la transaction</label>
             <div>
-                <input type="text" size="100" name="intitule" placeholder="intitulé de la transaction"
+                <input class="create-trans" type="text" size="100" name="intitule" placeholder="intitulé de la transaction"
                     value="{{ old('intitule') }}">
             </div>
             @error('intitule')
@@ -15,9 +15,21 @@
         </div>
 
         <div>
+            <label>Categorie : </label>
+            <div>
+                <select name="id_categorie">
+                    @foreach ($categories as $categorie)
+                        <option value="{{ $categorie->id }}">
+                            {{ $categorie->intitule }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
+
+        <div>
             <label>Description de la transaction</label>
             <div>
-                <input type="text" size="100" name="description" placeholder="Description de la transaction"
+                <input class="create-trans" type="text" size="100" name="description" placeholder="Description de la transaction"
                     value="{{ old('description') }}">
             </div>
             @error('description')
@@ -28,7 +40,7 @@
         <div>
             <label>Montant de la transaction</label>
             <div>
-                <input type="number" step="0.01" size="100" name="montant" placeholder="Montant de la transaction"
+                <input class="create-trans" type="number" step="0.01" size="100" name="montant" placeholder="Montant de la transaction"
                     value="{{ old('montant') }}">
             </div>
             @error('montant')
@@ -48,18 +60,6 @@
             @error('sens_transaction')
                 <p>{{ $message }}</p>
             @enderror
-        </div>
-
-        <div>
-            <label>Categorie : </label>
-            <div>
-                <select name="id_categorie">
-                    @foreach ($categories as $categorie)
-                        <option value="{{ $categorie->id }}">
-                            {{ $categorie->intitule }}</option>
-                    @endforeach
-                </select>
-            </div>
         </div>
 
         <div>

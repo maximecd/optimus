@@ -17,6 +17,7 @@ return new class extends Migration {
             $table->string('intitule');
             $table->string('description', 300);
             $table->decimal('montant', 10, 2);
+            $table->date('date');
             $table->enum('sens_transaction', ['entrant', 'sortant']);
 
             $table->unsignedBigInteger('id_compte');

@@ -24,6 +24,7 @@ class TransactionFactory extends Factory
         $categories = Categorie::all()->pluck('id')->toArray();
         return ['intitule' => $this->faker->text(50),
             'description' => $this->faker->text(200),
+            'date' => $this->faker->dateTimeBetween('-1 year', 'now'),
             'montant' => $this->faker->numberBetween(-10000, 10000),
             'sens_transaction' => $this->faker->randomElement(['entrant', 'sortant']),
             'id_compte' => $this->faker->randomElement($comptes),
