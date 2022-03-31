@@ -27,6 +27,7 @@ class TransactionRequest extends FormRequest
             'intitule' => 'bail|required|min:1|max:300|string',
             'description' => 'bail|required|min:1|max:300|string',
             'montant' => 'bail|required|numeric|between:-10000,10000',
+            'date' => 'bail|required|date',
             'sens_transaction' => 'bail|required|min:1|max:20|string'
         ];
     }

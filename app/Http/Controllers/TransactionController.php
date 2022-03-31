@@ -46,6 +46,7 @@ class TransactionController extends Controller
         $transaction->description = $request->description;
         $transaction->montant = $request->montant;
         $transaction->sens_transaction = $request->sens_transaction;
+        $transaction->date = $request->date;
         $transaction->id_compte = $id_compte;
         $transaction->id_user = Auth::id();
         $transaction->id_categorie = $request->id_categorie;
