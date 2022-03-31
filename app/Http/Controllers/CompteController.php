@@ -82,7 +82,7 @@ class CompteController extends Controller
     public function update(CompteRequest $request, Compte $compte)
     {
         $compte->update($request->all());
-        return redirect()
+        return redirect()   
             ->route('compte.index')
             ->with('info', 'Le compte a bien été modifié');
     }
