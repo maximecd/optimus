@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\CompteController;
+use App\Http\Middleware\CheckAccountAccess;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,6 @@ use App\Http\Controllers\CompteController;
 
 
 
-
 /*
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -25,13 +25,14 @@ Route::get('/dashboard', function () {
 
 require __DIR__ . '/auth.php';
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => [CheckAccountAccess::class]], function () {
 
     //Comptes
     Route::get('/', [CompteController::class, 'index']);
-    Route::resource('compte', CompteController::class);
-    Route::get('compte/{id}', [CompteController::class, 'dashboard'])->name('compte.dashboard');
+    Route::get('compte/{id}', [CompteController::class, 'show'])->name('compte.dashboard');
     Route::get('compte/{id}/edit', [CompteController::class, 'edit'])->name('compte.edit');
+    Route::resource('compte', CompteController::class);
+
 
     // Transactions
 
@@ -40,6 +41,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('compte/{id}/transaction/{id_transaction}/editer', [TransactionController::class, 'edit'])->name('transaction.edit');
     Route::put('compte/{id}/transaction/{id_transaction}/editer', [TransactionController::class, 'update'])->name('transaction.update');
     Route::get('compte/{id}/transaction/{id_transaction}/supprimer', [TransactionController::class, 'destroy'])->name('transaction.destroy');
+    Route::get('compte/{id}/transaction/{id_transaction}/voir', [TransactionController::class, 'show'])->name('transaction.show');
 
     
 });
