@@ -41,6 +41,7 @@ Route::group(['middleware' => [CheckAccountAccess::class]], function () {
     Route::get('compte/{id}/transaction/{id_transaction}/editer', [TransactionController::class, 'edit'])->name('transaction.edit');
     Route::put('compte/{id}/transaction/{id_transaction}/editer', [TransactionController::class, 'update'])->name('transaction.update');
     Route::get('compte/{id}/transaction/{id_transaction}/supprimer', [TransactionController::class, 'destroy'])->name('transaction.destroy');
+    Route::get('compte/{id}/transaction/{id_transaction}/voir', [TransactionController::class, 'show'])->name('transaction.show');
 
     
 });

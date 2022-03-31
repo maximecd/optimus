@@ -35,7 +35,10 @@
                         <tr>
                             <td>Catégorie</td>
 
-                            <td class="text-right">route.show</td>
+                            <td class="text-right"><a class="mr-2"
+                                href="{{ route('transaction.show', ['id' => $compte, 'id_transaction' => $transaction]) }}">
+                                Voir
+                            </a></td>
 
                             
                         </tr>

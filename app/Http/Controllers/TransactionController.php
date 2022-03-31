@@ -60,9 +60,11 @@ class TransactionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Transaction $transaction)
+    public function show($id_compte, $id_transaction)
     {
-        return view('transaction/show', compact('transaction'));
+        $categories = Categorie::all();
+        $transaction = Transaction::find($id_transaction);
+        return view('transaction/show', compact('transaction', 'id_compte', 'categories'));
     }
 
     /**
