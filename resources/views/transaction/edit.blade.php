@@ -84,6 +84,17 @@
                         </div>
                     </div>
 
+                    <div>
+                        <label>Date de la transaction</label>
+                        <div>
+                            <input class="create-trans" type="date" size="100" name="date" 
+                                value="{{ old('date', $transaction->date) }}">
+                        </div>
+                        @error('date')
+                            <p>{{ $message }}</p>
+                        @enderror
+                    </div>
+
 
                     <div>
                         <div>

@@ -12,6 +12,7 @@ class Transaction extends Model
     protected $fillable = [
         'intitule',
         'description',
+        'date',
         'montant',
         'sens_transaction',
         'id_compte',
