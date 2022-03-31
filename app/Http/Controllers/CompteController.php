@@ -67,7 +67,7 @@ class CompteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Compte $trancomptesaction)
+    public function edit(Compte $compte)
     {
         return view('compte/edit', compact('compte'));
     }

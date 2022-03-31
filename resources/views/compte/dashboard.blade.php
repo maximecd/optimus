@@ -22,6 +22,7 @@
                 </thead>
                 <tbody>
                     @foreach ($transactions as $transaction)
+                        
                         <tr
                             class="border-b
                     {{ $transaction->sens_transaction == 'entrant' ? 'bg-green-100' : 'bg-red-100' }}">
@@ -32,11 +33,11 @@
                             <td class="p-3">Categ *à récupérer*</td>
                             <td class="p-3">{{ $transaction->description }}</td>
                             <td><a
-                                    href="{{ route('transaction.edit', [$compte->id, 'id_transaction' => $transaction->id]) }}">Modifier</a>
+                                    href="{{ route('transaction.edit', ['id' => $compte, 'id_transaction' => $transaction]) }}">Modifier</a>
                             </td>
                             <td>
                                 <form
-                                    action="{{ route('transaction.destroy', [$compte->id, 'id_transaction' => $transaction->id]) }}"
+                                    action="{{ route('transaction.destroy', [$compte->id, 'id_transaction' => $transaction]) }}"
                                     method="post">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}

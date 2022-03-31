@@ -4,10 +4,20 @@
     <div>
         <div>
             <div>
-                <form method="POST" action="{{ route('transaction.update', [$id_compte, 'id_transaction' => $transaction->id]) }}">
+               <?php
+
+                echo $transaction->first()->intitule;
+
+               ?>
+                
+
+                
+                <form action=""
+                    method="POST">
                     {{ csrf_field() }}
 
                     {{ method_field('PUT') }}
+
 
                     <div>
                         <label for="intitule">Intitule de la transaction</label>
@@ -39,7 +49,8 @@
                         <label for="montant">Montant de la transaction</label>
 
                         <div>
-                            <input type="number" step="0.01" id="montant" name="montant" placeholder="Montant de la transaction"
+                            <input type="number" step="0.01" id="montant" name="montant"
+                                placeholder="Montant de la transaction"
                                 value="{{ old('montant', $transaction->montant) }}">
                         </div>
                         @error('montant')
@@ -66,10 +77,8 @@
                         <div>
                             <select name="id_categorie">
                                 @foreach ($categories as $categorie)
-
-
-                                <option value="{{ $categorie->id }}">
-                                    {{ $categorie->intitule }}</option>
+                                    <option value="{{ $categorie->id }}">
+                                        {{ $categorie->intitule }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -81,7 +90,7 @@
                             <button type="submit">
                                 Enregistrer
                             </button>
-                            <a href="{{ route('transaction.index') }}">Retour à la liste</a>
+                            <a href="z">Retour à la liste</a>
                         </div>
                     </div>
                 </form>
