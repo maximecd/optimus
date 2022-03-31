@@ -39,7 +39,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('compte/{id}/transaction/ajouter', [TransactionController::class, 'store'])->name('transaction.store');
     Route::get('compte/{id}/transaction/{id_transaction}/editer', [TransactionController::class, 'edit'])->name('transaction.edit');
     Route::put('compte/{id}/transaction/{id_transaction}/editer', [TransactionController::class, 'update'])->name('transaction.update');
-    Route::post('compte/{id}/transaction/supprimer', [TransactionController::class, 'destroy'])->name('transaction.destroy');
+    Route::get('compte/{id}/transaction/{id_transaction}/supprimer', [TransactionController::class, 'destroy'])->name('transaction.destroy');
 
     
 });
