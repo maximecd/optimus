@@ -749,6 +749,9 @@ select {
 .w-1\/3 {
   width: 33.333333%;
 }
+.w-2\/3 {
+  width: 66.666667%;
+}
 .w-\[200px\] {
   width: 200px;
 }
@@ -758,8 +761,8 @@ select {
 .w-6 {
   width: 1.5rem;
 }
-.w-2\/3 {
-  width: 66.666667%;
+.w-2\/5 {
+  width: 40%;
 }
 .max-w-6xl {
   max-width: 72rem;
@@ -971,13 +974,13 @@ select {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
 }
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 .pt-8 {
   padding-top: 2rem;
@@ -1221,6 +1224,14 @@ select {
 .hover\:bg-gray-50:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+.hover\:bg-green-300:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(134 239 172 / var(--tw-bg-opacity));
+}
+.hover\:bg-red-300:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 165 165 / var(--tw-bg-opacity));
 }
 .hover\:bg-slate-200:hover {
   --tw-bg-opacity: 1;

@@ -2,18 +2,18 @@
 
 @section('content')
 <div class="flex justify-center items-center h-screen">
-    <div class="w-1/3 m-auto ">
+    <div class="w-2/5 m-auto ">
         <form action="{{ route('transaction.store', $id_compte) }}" method="POST">
             @csrf
             <div class="p-5">
 
                 <div class="bg-gray-200 flex space-between items-center p-5 rounded-lg w-full">
                     <div class="w-1/3">
-                        <label>Intitulé : </label>
+                        <label><b>Intitulé : </b></label>
                     </div>
                     <div class="w-2/3">
                         <input
-                            class="border-transparent shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            class=" border-transparent shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full"
                             name="intitule" type="text" placeholder="Intitulé" value="{{ old('intitule') }}">
                     </div>
                 </div>
@@ -26,19 +26,19 @@
 
                 <div class="bg-gray-200 flex space-between items-center p-5 rounded-lg w-full">
                     <div class="w-1/3">
-                    <label>Categorie : </label>
+                        <label><b>Categorie : </b></label>
                     </div>
                     <div class="w-2/3">
                         <select
-                        class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        name="id_categorie">
-                        @foreach ($categories as $categorie)
-                        <option value="{{ $categorie->id }}">
-                            {{ $categorie->intitule }}</option>
-                        @endforeach
-                    </select>
+                            class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            name="id_categorie">
+                            @foreach ($categories as $categorie)
+                            <option value="{{ $categorie->id }}">
+                                {{ $categorie->intitule }}</option>
+                            @endforeach
+                        </select>
                     </div>
-                    
+
                 </div>
             </div>
 
@@ -46,13 +46,13 @@
 
                 <div class="bg-gray-200 flex space-between items-center p-5 rounded-lg w-full">
                     <div class="w-1/3">
-                    <label>Description de la transaction</label>
+                        <label><b>Description de la transaction : </b></label>
                     </div>
                     <div class="w-2/3">
-                    <input
-                        class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        type="text" name="description" placeholder="Description de la transaction"
-                        value="{{ old('description') }}">
+                        <input
+                            class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            type="text" name="description" placeholder="Description de la transaction"
+                            value="{{ old('description') }}">
                     </div>
                 </div>
                 @error('description')
@@ -64,13 +64,13 @@
 
                 <div class="bg-gray-200 flex space-between items-center p-5 rounded-lg w-full">
                     <div class="w-1/3">
-                    <label>Montant de la transaction</label>
+                        <label><b>Montant de la transaction : </b></label>
                     </div>
                     <div class="w-2/3">
-                    <input
-                        class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        type="number" step="0.01" size="100" name="montant" placeholder="Montant de la transaction"
-                        value="{{ old('montant') }}">
+                        <input
+                            class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            type="number" step="0.01" size="100" name="montant" placeholder="Montant de la transaction"
+                            value="{{ old('montant') }}">
                     </div>
                 </div>
                 @error('montant')
@@ -82,15 +82,15 @@
 
                 <div class="bg-gray-200 flex space-between items-center p-5 rounded-lg w-full">
                     <div class="w-1/3">
-                    <label>Sens de la transaction : </label>
+                        <label><b>Sens de la transaction : </b></label>
                     </div>
                     <div class="w-2/3">
-                    <select name="sens_transaction"
-                        class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                        <option value="entrant">Entrant</option>
-                        <option value="sortant">Sortant</option>
+                        <select name="sens_transaction"
+                            class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <option value="entrant">Entrant</option>
+                            <option value="sortant">Sortant</option>
 
-                    </select>
+                        </select>
                     </div>
                 </div>
                 @error('sens_transaction')
@@ -102,12 +102,12 @@
 
                 <div class="bg-gray-200 flex space-between items-center p-5 rounded-lg w-full">
                     <div class="w-1/3">
-                    <label>Date de la transaction</label>
+                        <label><b>Date de la transaction : </b></label>
                     </div>
                     <div class="w-2/3">
-                    <input
-                        class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        type="date" size="100" name="date" value="{{ old('date') }}">
+                        <input
+                            class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            type="date" size="100" name="date" value="{{ old('date') }}">
                     </div>
                 </div>
                 @error('date')
@@ -118,7 +118,7 @@
             <div>
                 <div class="p-5">
                     <button
-                        class="bg-green-400 rounded-lg m-auto w-full justify-center items-center p-5 text-white font-bold">Enregistrer</button>
+                        class="bg-green-400 transition hover:bg-green-300 rounded-lg m-auto w-full justify-center items-center p-5 text-white font-bold">Enregistrer</button>
                 </div>
             </div>
         </form>
