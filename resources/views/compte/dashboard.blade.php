@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="dashboard-title text-center">Tableau de bord - {{ $compte->intitule }}</h1>
+    <h1 class="dashboard-title text-center">Tableau de bord - {{ $compte->intitule }}<a href="{{ route('compte.edit', $compte->id) }}"></a></h1>
 
     <div class="dashboard-container h-full">
 
@@ -40,7 +40,7 @@
                             
                         </tr>
                         <tr class="border-b">
-                            <td class="text-sm text-gray-500">Le XX/XX/XX</td>
+                            <td class="text-sm text-gray-500">Le {{$transaction->date}}</td>
                             <td class="text-right"><a class="mr-2"
                                 href="{{ route('transaction.edit', ['id' => $compte, 'id_transaction' => $transaction]) }}">
                                 Modifier
@@ -61,7 +61,10 @@
         </div>
         <div class="ajouter-transaction bg-gray-50 p-8 shadow-lg rounded-lg">
             <a href="{{ route('transaction.create', $compte->id) }}">Ajouter</a>
-
+        </div>
+        <div class="settings bg-gray-50 p-8 shadow-lg rounded-lg">
+            <a href="{{ route('compte.edit', $compte->id) }}">Settings</a>
         </div>
     </div>
+    
 @endsection
