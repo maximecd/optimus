@@ -28,7 +28,7 @@ require __DIR__ . '/auth.php';
 Route::group(['middleware' => [CheckAccountAccess::class]], function () {
 
     //Comptes
-    Route::get('/', [CompteController::class, 'index']);
+    Route::get('/', [CompteController::class, 'index'])->name('compte.index');
     Route::get('compte/{id}', [CompteController::class, 'show'])->name('compte.dashboard');
     Route::get('compte/{id}/edit', [CompteController::class, 'edit'])->name('compte.edit');
     Route::get('compte/{id}/delete', [CompteController::class, 'destory'])->name('compte.destroy');
