@@ -1,9 +1,8 @@
 .dashboard-container {
- 
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 25px;
 }
 
 .historique-transaction {
@@ -14,4 +13,20 @@
 }
 .settings {
   grid-area: 2 / 2 / 3 / 3;
+}
+
+.arrow{
+  color: rgb(163, 163, 163);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s;
+}
+
+.arrow span{
+  font-size: x-large;
+}
+
+.arrow:hover{
+  color: rgb(40, 40, 40);
 }
