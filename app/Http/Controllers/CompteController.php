@@ -97,9 +97,10 @@ class CompteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Compte $compte)
+    public function destroy($id_compte)
     {
-        $compte->delete();
+        Compte::find($id_compte)->delete();
+    
         return redirect()
             ->route('compte.index')
             ->with('info', 'Le compte a bien été suprimé');
