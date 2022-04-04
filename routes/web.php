@@ -31,6 +31,8 @@ Route::group(['middleware' => [CheckAccountAccess::class]], function () {
     Route::get('/', [CompteController::class, 'index'])->name('compte.index');
     Route::get('compte/{id}', [CompteController::class, 'show'])->name('compte.dashboard');
     Route::get('compte/{id}/edit', [CompteController::class, 'edit'])->name('compte.edit');
+    Route::put('compte/{id}/edit', [CompteController::class, 'update'])->name('compte.update');
+
     Route::get('compte/{id}/delete', [CompteController::class, 'destory'])->name('compte.destroy');
     //ajouter route pour créer un compte
     Route::get('compte/create', [CompteController::class, 'create'])->name('compte.create');
