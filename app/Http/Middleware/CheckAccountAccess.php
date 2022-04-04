@@ -25,7 +25,10 @@ class CheckAccountAccess
 
 
             // if route is /compte/
-            if ($request->is('compte/*')) {
+            if ($request->is('compte/create')) {
+                // skip
+            }
+            else if ($request->is('compte/*')) {
 
                 $access = false;
                 $compte = Compte::where('id', $request->route('id'))->first();

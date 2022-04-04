@@ -31,17 +31,21 @@ Route::group(['middleware' => [CheckAccountAccess::class]], function () {
     Route::get('/', [CompteController::class, 'index']);
     Route::get('compte/{id}', [CompteController::class, 'show'])->name('compte.dashboard');
     Route::get('compte/{id}/edit', [CompteController::class, 'edit'])->name('compte.edit');
-    Route::resource('compte', CompteController::class);
+    Route::get('compte/{id}/delete', [CompteController::class, 'destory'])->name('compte.destroy');
+    //ajouter route pour créer un compte
+    Route::get('compte/create', [CompteController::class, 'create'])->name('compte.create');
+
+
+
+//    Route::resource('compte', CompteController::class);
+
 
 
     // Transactions
-
     Route::get('compte/{id}/transaction/ajouter', [TransactionController::class, 'create'])->name('transaction.create');
     Route::post('compte/{id}/transaction/ajouter', [TransactionController::class, 'store'])->name('transaction.store');
     Route::get('compte/{id}/transaction/{id_transaction}/editer', [TransactionController::class, 'edit'])->name('transaction.edit');
     Route::put('compte/{id}/transaction/{id_transaction}/editer', [TransactionController::class, 'update'])->name('transaction.update');
     Route::get('compte/{id}/transaction/{id_transaction}/supprimer', [TransactionController::class, 'destroy'])->name('transaction.destroy');
     Route::get('compte/{id}/transaction/{id_transaction}/voir', [TransactionController::class, 'show'])->name('transaction.show');
-
-    
 });
