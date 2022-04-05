@@ -44,7 +44,7 @@
                             <label><b>Catégorie de la transaction : </b></label>
                         </div>
                         <div class="w-2/3">
-                            <p>Catégorie de la transaction : {{ $categorie->intitule }}</p>
+                            <p>{{ $categorie->intitule }}</p>
                         </div>
 
                     </div>
