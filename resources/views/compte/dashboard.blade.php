@@ -13,16 +13,7 @@
             <p class="mb-8 text-lg font-bold">Votre solde : {{ $solde }}€</p>
 
             <table class="table-auto w-full rounded-lg">
-                <!-- <thead>
-                                                        <tr class="text-left bg-gray-100">
-                                                            <th class="p-3">Montant</th>
-                                                            <th class="p-3">Intitulé</th>
-                                                            <th class="p-3">Categorie</th>
-                                                            <th class="p-3">Description</th>
-                                                            <th></th>
-                                                            <th></th>
-                                                        </tr>
-                                                    </thead> -->
+
                 <tbody>
                     @foreach ($transactions as $transaction)
                         <tr class="border-t">
@@ -38,30 +29,30 @@
                         <tr>
                             <td>Catégorie</td>
 
-                            <td class="text-right"><a class="mr-2"
-                                href="{{ route('transaction.show', ['id' => $compte, 'id_transaction' => $transaction]) }}">
-                                Voir
-                            </a></td>
+                            <td class="text-right"><a class="text-purple-400"
+                                    href="{{ route('transaction.show', ['id' => $compte, 'id_transaction' => $transaction]) }}">Consulter</a></td>
 
-                            
+
                         </tr>
                         <tr class="border-b">
-                            <td class="text-sm text-gray-500">Le {{$transaction->date}}</td>
-                            <td class="text-right"><a class="mr-2"
-                                href="{{ route('transaction.edit', ['id' => $compte, 'id_transaction' => $transaction]) }}">
-                                Modifier
-                            </a>
-                            <a
-                                href="{{ route('transaction.destroy', ['id' => $compte->id, 'id_transaction' => $transaction]) }}">
-                                Supprimer
-                            </a>
+                            <td class="text-sm text-gray-500">Le {{ $transaction->date }}</td>
+                            <td class="text-right"><a class="mr-2 text-green-700"
+                                    href="{{ route('transaction.edit', ['id' => $compte, 'id_transaction' => $transaction]) }}">
+                                    Modifier
+                                </a>
+                                <a class="text-red-500"
+                                    href="{{ route('transaction.destroy', ['id' => $compte->id, 'id_transaction' => $transaction]) }}">
+                                    Supprimer
+                                </a>
 
-                        </td>
+                            </td>
                         </tr>
                     @endforeach
                     @if (count($transactions) == 0)
                         <tr>
-                            <td colspan="5" class=""><a class="text-purple-400 underline" href="{{ route('transaction.create', $compte->id) }}">Aucune transaction. Créez-en !</a></td>
+                            <td colspan="5" class=""><a class="text-purple-400 underline"
+                                    href="{{ route('transaction.create', $compte->id) }}">Aucune transaction. Créez-en
+                                    !</a></td>
                         </tr>
                     @endif
                 </tbody>
@@ -77,5 +68,5 @@
             <a href="{{ route('compte.edit', $compte->id) }}">Settings</a>
         </div>
     </div>
-    
+
 @endsection
