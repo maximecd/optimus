@@ -1,11 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="flex justify-center items-center h-screen">
-        <div class="w-1/3 m-auto ">
-            <a href="{{ route('compte.dashboard', $compte->id) }}">
-                <div class="arrow"><span>&larr;</span> Retour</div>
-            </a>
+    <div class="flex justify-center items-center h-full">
+        <div class="sm:w-full lg:w-2/5 m-auto ">
+           
 
 
 
@@ -15,6 +13,12 @@
                 {{ method_field('PUT') }}
 
                 <div class="p-5">
+                    <div class="mb-2">
+                        <a href="{{ route('compte.dashboard', $compte->id) }}">
+                            <div class="arrow"><span>&larr;</span> Retour</div>
+                        </a>
+                    </div>
+                 
 
                     <div class="bg-gray-200 flex justify-center items-center p-5 rounded-lg w-full">
                         <div class="w-1/3">

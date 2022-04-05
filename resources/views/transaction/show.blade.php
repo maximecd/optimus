@@ -2,7 +2,7 @@
 
 @section('content')
 <div>
-    <div class="flex justify-center items-center h-screen">
+    <div class="flex justify-center items-center h-full">
         <div class="w-2/5 m-auto ">
             <form action="{{ route('transaction.store', $id_compte) }}" method="POST">
                 @csrf
