@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Modification transaction')
+
 @section('content')
     <div class="flex justify-center items-center h-full">
         <div class="sm:w-full lg:w-2/5 m-auto ">
