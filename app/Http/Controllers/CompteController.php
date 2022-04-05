@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Compte;
 use Illuminate\Http\Request;
 use App\Http\Requests\CompteRequest;
+use App\Models\Categorie;
 use App\Models\Transaction;
 use Illuminate\Support\Facades\Auth;
 
@@ -59,8 +60,11 @@ class CompteController extends Controller
         $compte = Compte::where('id', $id_compte)->firstOrFail();
 
         $transactions = Transaction::where('id_compte', $compte->id)->get();
+
+        $categories = Categorie::all();
+
         $solde = getSolde($transactions);
-        return view('compte/dashboard', compact('compte', 'transactions', 'solde'));
+        return view('compte/dashboard', compact('compte', 'transactions', 'solde', 'categories'));
     }
 
     /**
