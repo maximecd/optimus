@@ -19,13 +19,14 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 <body">
-    <div class="App">
-       
+    <div class="App h-full">
+
         @include('layouts.navigation')
 
 
-        <div class="max-w-7xl mx-auto pt-8 px-8">
+        <div class="max-w-7xl mx-auto pt-20 p-8  h-full ">
             @yield('info-message')
+
             @yield('content')
         </div>
 

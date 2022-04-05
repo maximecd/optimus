@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="dashboard-title text-center text-lg mb-10">Tableau de bord - {{ $compte->intitule }}</h1>
-
-    <div class="dashboard-container h-full">
 
 
+    <div class="dashboard-container h-full p-4">
+
+        <h1 class="dashboard-title text-center text-lg mb-10">Tableau de bord - {{ $compte->intitule }}</h1>
         <div class="historique-transaction bg-gray-50 p-8 shadow-lg rounded-lg">
             <p class="mb-8 text-lg font-bold">Votre solde : {{ $solde }}€</p>
 
