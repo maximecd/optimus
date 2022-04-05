@@ -83,12 +83,12 @@ class CompteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CompteRequest $request, Compte $compte)
+    public function update(CompteRequest $request, $id_compte)
     {
+        $compte = Compte::where('id', $id_compte)->firstOrFail();
         $compte->update($request->all());
-        return redirect()   
-            ->route('compte.index')
-            ->with('info', 'Le compte a bien été modifié');
+        return redirect()->route('compte.dashboard', $id_compte)->with('info', 'Les informations du compte ont bien été modifiés');
+
     }
 
     /**

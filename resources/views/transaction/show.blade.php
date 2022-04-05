@@ -2,8 +2,8 @@
 
 @section('content')
 <div>
-    <div class="flex justify-center items-center h-screen">
-        <div class="w-2/5 m-auto ">
+    <div class="flex justify-center items-center h-full">
+        <div class="sm:w-full lg:w-3/5 m-auto ">
             <form action="{{ route('transaction.store', $id_compte) }}" method="POST">
                 @csrf
 
@@ -44,7 +44,7 @@
                             <label><b>Catégorie de la transaction : </b></label>
                         </div>
                         <div class="w-2/3">
-                            <p>Catégorie de la transaction : {{ $categorie->intitule }}</p>
+                            <p>{{ $categorie->intitule }}</p>
                         </div>
 
                     </div>

@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('title', 'Accueil')
+
+
 @section('content')
     <div class="flex flex-nowrap">
         @foreach ($comptes as $compte)

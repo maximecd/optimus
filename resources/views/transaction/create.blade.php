@@ -1,8 +1,11 @@
 @extends('layouts.app')
 
+@section('title', 'Nouvelle transaction')
+
+
 @section('content')
-<div class="flex justify-center items-center h-screen">
-    <div class="w-2/5 m-auto ">
+<div class="flex justify-center items-center h-full">
+    <div class="sm:w-full lg:w-3/5 m-auto">
         <form action="{{ route('transaction.store', $id_compte) }}" method="POST">
             @csrf
             <div class="p-5">
@@ -46,7 +49,7 @@
 
                 <div class="bg-gray-200 flex space-between items-center p-5 rounded-lg w-full">
                     <div class="w-1/3">
-                        <label><b>Description de la transaction : </b></label>
+                        <label><b>Description : </b></label>
                     </div>
                     <div class="w-2/3">
                         <input
@@ -64,7 +67,7 @@
 
                 <div class="bg-gray-200 flex space-between items-center p-5 rounded-lg w-full">
                     <div class="w-1/3">
-                        <label><b>Montant de la transaction : </b></label>
+                        <label><b>Montant : </b></label>
                     </div>
                     <div class="w-2/3">
                         <input
@@ -102,7 +105,7 @@
 
                 <div class="bg-gray-200 flex space-between items-center p-5 rounded-lg w-full">
                     <div class="w-1/3">
-                        <label><b>Date de la transaction : </b></label>
+                        <label><b>Date : </b></label>
                     </div>
                     <div class="w-2/3">
                         <input
