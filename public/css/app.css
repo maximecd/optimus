@@ -716,12 +716,9 @@ select {
 .h-full {
   height: 100%;
 }
-<<<<<<< HEAD
 .h-\[560px\] {
   height: 560px;
 }
-=======
->>>>>>> 902674674cde41755d7992ae9484c7382c09c15a
 .h-\[200px\] {
   height: 200px;
 }
@@ -943,23 +940,15 @@ select {
 .p-6 {
   padding: 1.5rem;
 }
-<<<<<<< HEAD
 .p-5 {
   padding: 1.25rem;
-=======
+}
 .p-4 {
   padding: 1rem;
->>>>>>> 902674674cde41755d7992ae9484c7382c09c15a
 }
 .p-8 {
   padding: 2rem;
 }
-<<<<<<< HEAD
-=======
-.p-5 {
-  padding: 1.25rem;
-}
->>>>>>> 902674674cde41755d7992ae9484c7382c09c15a
 .p-3 {
   padding: 0.75rem;
 }

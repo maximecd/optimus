@@ -62,13 +62,13 @@
 
     </div>
     <div class="justify-content">
-        <a href="{{ route('transaction.create', $compte->id) }}" class="w-[200px] h-[560px]">
+        <a href="{{ route('transaction.create', $compte->id) }}" class="w-[200px] h-[560px] justify-content">
             <div
                 class="shadow rounded-xl w-[200px] h-[560px] bg-slate-50 hover:bg-slate-200 __DIR__ p-3 flex justify-center items-center">
                 <p class="text-cyan-600 text-5xl">+</p>
             </div>
         </a>
-        <a href="{{ route('compte.edit', $compte->id) }}" class="w-[200px] h-[560px]">
+        <a href="{{ route('compte.edit', $compte->id) }}" class="w-[200px] h-[560px] justify-content">
             <div
                 class="shadow rounded-xl w-[200px] h-[560px] bg-slate-50 hover:bg-slate-200 __DIR__ p-3 flex justify-center items-center">
                 Settings
