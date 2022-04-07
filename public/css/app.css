@@ -924,13 +924,10 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(248 113 113 / var(--tw-bg-opacity));
 }
-<<<<<<< HEAD
-=======
 .bg-blue-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
 }
->>>>>>> 55a52031e03bd4dd6f639b4b76ca1a07812c7c1f
 .bg-slate-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(248 250 252 / var(--tw-bg-opacity));
@@ -1002,6 +999,9 @@ select {
 }
 .pr-4 {
   padding-right: 1rem;
+}
+.pl-4 {
+  padding-left: 1rem;
 }
 .pt-20 {
   padding-top: 5rem;
@@ -1247,13 +1247,10 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(252 165 165 / var(--tw-bg-opacity));
 }
-<<<<<<< HEAD
-=======
 .hover\:bg-blue-300:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(147 197 253 / var(--tw-bg-opacity));
 }
->>>>>>> 55a52031e03bd4dd6f639b4b76ca1a07812c7c1f
 .hover\:bg-slate-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
