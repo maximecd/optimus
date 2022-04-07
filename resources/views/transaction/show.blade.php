@@ -22,7 +22,7 @@
                             <label>Utilisateur de la transaction</label>
                         </div>
                         <div class="w-2/3">
-                            <input disabled class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{ $user->name }}">
+                            <input disabled class="bg-white border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{ $user->name }}">
                         </div>
                     </div>
                     @error('intitule')
@@ -37,7 +37,7 @@
                             <label>Intitule de la transaction</label>
                         </div>
                         <div class="w-2/3">
-                            <input disabled class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{ $transaction->intitule }}">
+                            <input disabled class="bg-white border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{ $transaction->intitule }}">
                         </div>
                     </div>
                     @error('intitule')
@@ -52,7 +52,7 @@
                             <label>Catégorie de la transaction</label>
                         </div>
                         <div class="w-2/3">
-                            <input disabled class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{ $categorie->intitule }}">
+                            <input disabled class="bg-white border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{ $categorie->intitule }}">
                         </div>
 
                     </div>
@@ -65,7 +65,7 @@
                             <label>Description de la transaction</label>
                         </div>
                         <div class="w-2/3">
-                            <input disabled class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{ $transaction->description }}">
+                            <input disabled class="bg-white border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{ $transaction->description }}">
                         </div>
                     </div>
                     @error('description')
@@ -80,7 +80,7 @@
                             <label>Montant de la transaction</label>
                         </div>
                         <div class="w-2/3">
-                            <input disabled class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{ $transaction->montant }}">
+                            <input disabled class="bg-white border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{ $transaction->montant }}">
                         </div>
                     </div>
                     @error('montant')
@@ -95,7 +95,7 @@
                             <label>Date</label>
                         </div>
                         <div class="w-2/3">
-                            <input disabled class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{ $transaction->date }}">
+                            <input disabled class="bg-white border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{ $transaction->date }}">
                         </div>
                     </div>
                     @error('sens_transaction')
@@ -109,7 +109,7 @@
                             <p>Sens de la transaction</p>
                         </div>
                         <div class="w-2/3">
-                            <input disabled class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{ $transaction->sens_transaction }}">
+                            <input disabled class="bg-white border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{ $transaction->sens_transaction }}">
                         </div>
                     </div>
                     @error('date')
