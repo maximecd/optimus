@@ -8,14 +8,16 @@
 
     <div class="dashboard-container h-full p-4">
 
-        <div class="solde bg-gray-50 p-8 shadow-lg rounded-lg">
-
-
-            <p>Tableau de bord - {{ $compte->intitule }}</p>
-            <p class="mb-8 text-lg font-bold">Votre solde : {{ $solde }}€</p>
+        <div class="solde bg-gray-50 p-8 shadow-lg rounded-lg ">
+            <p class="font-bold text-xl mb-4">Bienvenue {{ $user->name }} !</p>
+            <hr>
+            <br>
+            <p>Vous êtes sur le tableau de bord du compte : <span class="font-bold">{{ $compte->intitule }}</span></p>
+            <br>
+            <p class="mb-8">Votre solde est de {{ $solde }}€</p>
         </div>
         <div class="historique-transaction bg-gray-50 p-8 shadow-lg rounded-lg overflow-auto">
-            <p>Historique des transactions</p>
+            <p class="text-xl font-bold mb-4">Historique des transactions</p>
             <table class="table-auto w-full rounded-lg">
 
                 <tbody>
@@ -62,15 +64,12 @@
                     @endif
                 </tbody>
             </table>
-
-
-
         </div>
-        <div class="ajouter-transaction bg-gray-50 p-8 shadow-lg rounded-lg">
-            <a href="{{ route('transaction.create', $compte->id) }}">Ajouter</a>
+        <div class="ajouter-transaction bg-gray-50 p-8 shadow-lg rounded-lg flex items-center justify-center">
+            <a href="{{ route('transaction.create', $compte->id) }}">Ajouter une transaction</a>
         </div>
-        <div class="settings bg-gray-50 p-8 shadow-lg rounded-lg">
-            <a href="{{ route('compte.edit', $compte->id) }}">Settings</a>
+        <div class="settings bg-gray-50 p-8 shadow-lg rounded-lg flex items-center justify-center">
+            <a href="{{ route('compte.edit', $compte->id) }}">Paramètres du compte</a>
         </div>
     </div>
 

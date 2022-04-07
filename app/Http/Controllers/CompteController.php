@@ -8,6 +8,7 @@ use App\Http\Requests\CompteRequest;
 use App\Models\Categorie;
 use App\Models\Transaction;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class CompteController extends Controller
 {
@@ -64,7 +65,8 @@ class CompteController extends Controller
         $categories = Categorie::all();
 
         $solde = getSolde($transactions);
-        return view('compte/dashboard', compact('compte', 'transactions', 'solde', 'categories'));
+        $user = User::find($compte->id_admin);
+        return view('compte/dashboard', compact('compte', 'transactions', 'solde', 'categories', 'user'));
     }
 
     /**
