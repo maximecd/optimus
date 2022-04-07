@@ -38,6 +38,7 @@ Route::group(['middleware' => [CheckAccountAccess::class]], function () {
     Route::delete('compte/{id}/delete', [CompteController::class, 'destroy'])->name('compte.destroy');
 
     Route::put('compte/{id}/invite', [CompteController::class, 'invite'])->name('compte.invite');
+    Route::delete('compte/invite/{id}/decline', [CompteController::class, 'declineInvite'])->name('invite.decline');
 
     //ajouter route pour créer un compte
  

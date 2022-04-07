@@ -22,7 +22,13 @@ class CompteController extends Controller
     public function index()
     {
         $comptes = Compte::where('id_admin', Auth::id())->get();
-        return view('compte/index', compact('comptes'));
+        $invitations = Invitation::where('id_invite', Auth::id())->get();
+        foreach ($invitations as $invitation) {
+            $invitation->compte = Compte::find($invitation->id_compte); 
+            $invitation->admin_nom = User::find($invitation->compte->id_admin)->first_name;
+            $invitation->admin_prenom = User::find($invitation->compte->id_admin)->name;
+        }
+        return view('compte/index', compact('comptes', 'invitations'));
     }
 
     /**
@@ -141,5 +147,11 @@ class CompteController extends Controller
         $invitation->save();
 
         return redirect()->route('compte.dashboard', $id_compte)->with('info', 'L\'invitation a bien été envoyé');
+    }
+
+    public function declineInvite($id){
+        $invitation = Invitation::where('id_compte', $id)->where('id_invite', Auth::id())->first();
+        $invitation->delete();
+        return redirect()->route('compte.index')->with('info', 'L\'invitation a bien été refusé');
     }
 }
