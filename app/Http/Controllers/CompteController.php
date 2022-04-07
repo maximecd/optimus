@@ -11,7 +11,6 @@ use App\Models\Invitation;
 use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User;
 
 class CompteController extends Controller
 {
