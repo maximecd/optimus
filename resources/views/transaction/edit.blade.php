@@ -9,8 +9,6 @@
                 method="POST">
                 {{ csrf_field() }}
                 {{ method_field('PUT') }}
-
-
                 <div class="p-5">
 
                     <div class="mb-2">
