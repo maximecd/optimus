@@ -6,23 +6,29 @@ body {
 .dashboard-container {
   display: grid;
   grid-template-columns: repeat(2, 0.5fr) 1fr;
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: 0.1fr repeat(2, 1fr);
   grid-column-gap: 25px;
   grid-row-gap: 25px;
 }
 
-.solde {
-  grid-area: 1 / 1 / 2 / 3;
+.retour{
+  grid-area: 1 / 1 / 2 / 4;
+}
+
+.solde{
+  grid-area: 2 / 1 / 3 / 3;
 }
 
 .historique-transaction {
-  grid-area: 1 / 3 / 4 / 4;
+  grid-area: 2 / 3 / 4 / 4;
 }
+
 .ajouter-transaction {
-  grid-area: 2 / 1 / 4 / 2;
+  grid-area: 3 / 1 / 4 / 2;
 }
+
 .settings {
-  grid-area: 2 / 2 / 4 / 3;
+  grid-area: 3 / 2 / 4 / 3;
 }
 
 .arrow {
