@@ -16,8 +16,7 @@
         @endforeach
 
         <a href="{{ route('compte.create') }}">
-            <div
-                class="shadow rounded-xl w-[200px] h-[200px] bg-slate-50 hover:bg-slate-200 __DIR__ p-3 flex justify-center items-center">
+            <div class="shadow rounded-xl w-[200px] h-[200px] bg-slate-50 hover:bg-slate-200 p-3 flex justify-center items-center">
                 <p class="text-cyan-600 text-5xl">+</p>
             </div>
         </a>
