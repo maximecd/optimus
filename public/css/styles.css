@@ -31,6 +31,30 @@ body {
   grid-area: 3 / 2 / 4 / 3;
 }
 
+.parametres-container {
+  display: grid;
+  grid-template-columns: 0.6fr 1fr;
+  grid-template-rows: 0.2fr repeat(2, 1fr);
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+}
+
+.retour-setting{
+  grid-area: 1 / 1 / 2 / 3;
+}
+
+.utilisateurs-compte{
+  grid-area: 2 / 2 / 4 / 3;
+}
+
+.nom-compte{
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.inviter-utilisateur{
+  grid-area: 3 / 1 / 4 / 2;
+}
+  
 .arrow {
   color: rgb(163, 163, 163);
   display: flex;

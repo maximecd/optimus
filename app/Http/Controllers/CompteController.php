@@ -75,11 +75,13 @@ class CompteController extends Controller
 
         $transactions = Transaction::where('id_compte', $compte->id)->get();
 
-        $categories = Categorie::all();
+        foreach ($transactions as $transaction) {
+            $transaction->categorie = Categorie::find($transaction->id_categorie);
+        }
 
         $solde = getSolde($transactions);
         $user = User::find($compte->id_admin);
-        return view('compte/dashboard', compact('compte', 'transactions', 'solde', 'categories', 'user'));
+        return view('compte/dashboard', compact('compte', 'transactions', 'solde', 'user'));
     }
 
     /**
@@ -92,7 +94,8 @@ class CompteController extends Controller
 
     {
         $compte = Compte::where('id', $id_compte)->firstOrFail();
-        return view('compte/edit', compact('compte'));
+        $inviteUsers = UtilisateurCompte::where('id_compte', $id_compte)->get();
+        return view('compte/edit', compact('compte','inviteUsers'));
     }
 
     /**

@@ -619,6 +619,9 @@ select {
 .m-auto {
   margin: auto;
 }
+.m-6 {
+  margin: 1.5rem;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -669,14 +672,14 @@ select {
 .mt-3 {
   margin-top: 0.75rem;
 }
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
 .mr-4 {
   margin-right: 1rem;
 }
 .-mr-2 {
   margin-right: -0.5rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
 }
 .block {
   display: block;
@@ -1486,10 +1489,6 @@ select {
   }
 }
 @media (min-width: 1024px) {
-
-  .lg\:w-2\/5 {
-    width: 40%;
-  }
 
   .lg\:w-3\/5 {
     width: 60%;
