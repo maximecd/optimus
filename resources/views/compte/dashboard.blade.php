@@ -9,27 +9,29 @@
                 <div class="arrow"><span>&larr;</span> Retour</div>
             </a>
         </div>
-        <div class="solde bg-gray-50 p-8 shadow-lg rounded-lg relative ">
-            <p class="font-bold text-xl mb-4">Bienvenue {{ $user->name }} !</p>
+        <div class="solde bg-gray-50 p-8 shadow-lg rounded-lg flex flex-col">
+            <p class="font-bold text-xl mb-4">Tableau de bord - <span class="font-bold">{{ $compte->intitule }}</span>
+            </p>
             <hr>
-            <br>
-            <p>Vous êtes sur le tableau de bord du compte : <span class="font-bold">{{ $compte->intitule }}</span></p>
-            <br>
-            <div class="mb-8 absolute bottom-0">
-                <p class=" text-xl">Solde : <span
-                        class="font-bold text-2xl {{ $solde > 0 ? 'text-green-600' : 'text-red-600'}}"> {{ $solde }}
-                        €</span></p>
-                <p class="tips italic">
-                    @if ($solde <= 50) 
-                    Vous devriez faire attention à vos dépenses ! 
-                    @elseif ($solde >= 500 && $solde <1200)
-                    Continuez ainsi vous êtes dans le droit chemin !
-                    @elseif ($solde >= 1200)
-                    Essayez d'investir ou d'épargnez !
-                    @endif
+            <div class="flex flex-col">
+                <p class=" text-xl">Solde :
+                    <span class="font-bold text-2xl {{ $solde > 0 ? 'text-green-600' : 'text-red-600'}}"> {{
+                        number_format($solde,2) }} €</span>
                 </p>
-            </div>
 
+                @if ($solde < 0 ) <p class="tips italic">Attention, vous êtes à découvert !</p>
+                    @elseif ($solde == 0 )
+                    <p class="tips italic">Attention vous êtes à deux doigts d'être à découvert !</p>
+                    @elseif ($solde <= 50 && $solde> 0)
+                        <p class="tips italic">Vous devriez faire attention à vos dépenses ! </p>
+                        @elseif ($solde >= 500 && $solde <1200) <p class="tips italic">Continuez ainsi vous êtes dans le
+                            droit chemin !</p>
+                            @elseif ($solde >= 1200)
+                            <p class="tips italic"> Essayez d'investir ou d'épargner !</p>
+
+                            @endif
+
+            </div>
         </div>
         <div class="historique-transaction bg-gray-50 p-8 shadow-lg rounded-lg overflow-auto">
             <p class="text-xl font-bold mb-4">Historique des transactions</p>
@@ -48,7 +50,7 @@
 
                     </tr>
                     <tr>
-                        <td>Catégorie</td>
+                        <td></td>
 
                         <td class="text-right"><a class="text-purple-400"
                                 href="{{ route('transaction.show', ['id' => $compte, 'id_transaction' => $transaction]) }}">Consulter</a>
