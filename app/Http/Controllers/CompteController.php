@@ -10,6 +10,7 @@ use App\Models\Categorie;
 use App\Models\Invitation;
 use App\Models\Transaction;
 use App\Models\User;
+use App\Models\UtilisateurCompte;
 use Illuminate\Support\Facades\Auth;
 
 class CompteController extends Controller
@@ -22,7 +23,17 @@ class CompteController extends Controller
     public function index()
     {
         $comptes = Compte::where('id_admin', Auth::id())->get();
-        return view('compte/index', compact('comptes'));
+        $invitations = Invitation::where('id_invite', Auth::id())->get();
+        foreach ($invitations as $invitation) {
+            $invitation->compte = Compte::find($invitation->id_compte); 
+            $invitation->admin_nom = User::find($invitation->compte->id_admin)->first_name;
+            $invitation->admin_prenom = User::find($invitation->compte->id_admin)->name;
+        }
+        $comptesInv = UtilisateurCompte::where('id_user', Auth::id())->get();
+        foreach ($comptesInv as $compteInv) {
+            $compteInv->compte = Compte::find($compteInv->id_compte); 
+        }
+        return view('compte/index', compact('comptes', 'comptesInv', 'invitations'));
     }
 
     /**
@@ -141,5 +152,22 @@ class CompteController extends Controller
         $invitation->save();
 
         return redirect()->route('compte.dashboard', $id_compte)->with('info', 'L\'invitation a bien été envoyé');
+    }
+
+    public function declineInvite($id){
+        Invitation::where('id_compte', $id)->where('id_invite', Auth::id())->delete();
+        return redirect()->route('compte.index')->with('info', 'L\'invitation a bien été refusé');
+    }
+
+    public function acceptInvite($id){
+        $invitation = Invitation::where('id_compte', $id)->where('id_invite', Auth::id())->first();
+        UtilisateurCompte::create([
+            'id_compte' => $invitation->id_compte,
+            'id_user' => Auth::id(),
+            'editeur' => true
+        ]);
+
+        Invitation::where('id_compte', $id)->where('id_invite', Auth::id())->delete();
+        return redirect()->route('compte.index')->with('info', 'Vous avez bien accepté l\'invitation');
     }
 }

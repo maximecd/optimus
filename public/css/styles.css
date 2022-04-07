@@ -46,3 +46,36 @@ body {
 .arrow:hover {
   color: rgb(40, 40, 40);
 }
+
+.popup {
+  /* apply 3 second hiding animation after 10 second delay */
+  animation: hide 5s 0.3s forwards;
+  /* fix popup at the center of screen, optional style */
+  position: fixed;
+  left: -10vw;
+  border-radius: 5px;
+  padding: 2em;
+  bottom: 10vh;
+  padding: 20px;
+  opacity: 0;
+}
+
+@keyframes hide {
+  0% {
+
+  }
+  30% {
+    opacity: 1;
+
+    left: 10vw;
+  }
+  70% {
+    opacity: 1;
+
+    left: 10vw;
+  }
+  100% {
+    opacity: 0;
+    left: -10vw;
+  }
+}

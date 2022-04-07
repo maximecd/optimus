@@ -26,7 +26,12 @@
 
 
         <div class="max-w-7xl mx-auto pt-20 p-8  h-full ">
-            @yield('info-message')
+            @if (session()->get('info'))
+                <div class="popup shadow-xl bg-slate-200 text-black">
+                    {{ session()->get('info') }}
+                </div>
+            @endif
+
 
             @yield('content')
         </div>

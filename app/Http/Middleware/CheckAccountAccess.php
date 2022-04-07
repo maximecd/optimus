@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use App\Models\Compte;
 use App\Models\User;
+use App\Models\UtilisateurCompte;
 use Illuminate\Support\Facades\Auth;
 
 class CheckAccountAccess
@@ -33,10 +34,15 @@ class CheckAccountAccess
                 $access = false;
                 $compte = Compte::where('id', $request->route('id'))->first();
                 $user = User::where('id', Auth::user()->id)->first();
+
+                $utilisateurCompte = UtilisateurCompte::where('id_user', $user->id)->where('id_compte', $compte->id)->first();
                 
                 if ($compte != null && $compte->id_admin == $user->id) {
                     $access = true;
+                }else if ($utilisateurCompte != null && $utilisateurCompte->id_user == $user->id) {
+                    $access = true;
                 }
+
              
                 //if access true return request
                 if ($access) {
