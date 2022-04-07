@@ -6,8 +6,10 @@
         <form action="{{ route('compte.store') }}" method="POST">
             @csrf
             <div class="p-5">
-                <div class="long-arrow-left">
-                
+                <div class="pb-5">
+                    <a href="{{ route('compte.index') }}">
+                        <div class="arrow"><span>&larr;</span> Retour</div>
+                    </a>
                 </div>
                 <div class="bg-gray-200 flex justify-center items-center p-5 rounded-lg w-full">
                     <div class="w-1/3">
