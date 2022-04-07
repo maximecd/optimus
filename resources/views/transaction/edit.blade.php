@@ -9,8 +9,6 @@
                 method="POST">
                 {{ csrf_field() }}
                 {{ method_field('PUT') }}
-
-
                 <div class="p-5">
 
                     <div class="mb-2">
@@ -18,7 +16,6 @@
                             <div class="arrow"><span>&larr;</span> Retour</div>
                         </a>
                     </div>
-
 
                     <div class="bg-gray-200 flex space-between items-center p-5 rounded-lg w-full">
                         <div class="w-1/3">
