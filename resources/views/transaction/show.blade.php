@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Consulter une transaction')
+
 @section('content')
 <div>
     <div class="flex justify-center items-center h-full">
@@ -9,12 +11,18 @@
 
                 <div class="p-5">
 
+                    <div class="mb-2">
+                        <a href="{{ route('compte.dashboard', $id_compte) }}">
+                            <div class="arrow"><span>&larr;</span> Retour</div>
+                        </a>
+                    </div>
+
                     <div class="bg-gray-200 flex space-between items-center p-5 rounded-lg w-full">
                         <div class="w-1/3">
-                            <label><b>Utilisateur de la transaction : </b></label>
+                            <label>Utilisateur de la transaction</label>
                         </div>
                         <div class="w-2/3">
-                            <p>{{ $user->name }}</p>
+                            <input disabled class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{ $user->name }}">
                         </div>
                     </div>
                     @error('intitule')
@@ -26,10 +34,10 @@
 
                     <div class="bg-gray-200 flex space-between items-center p-5 rounded-lg w-full">
                         <div class="w-1/3">
-                            <label><b>Intitule de la transaction : </b></label>
+                            <label>Intitule de la transaction</label>
                         </div>
                         <div class="w-2/3">
-                            <p>{{ $transaction->intitule }}</p>
+                            <input disabled class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{ $transaction->intitule }}">
                         </div>
                     </div>
                     @error('intitule')
@@ -41,10 +49,10 @@
 
                     <div class="bg-gray-200 flex space-between items-center p-5 rounded-lg w-full">
                         <div class="w-1/3">
-                            <label><b>Catégorie de la transaction : </b></label>
+                            <label>Catégorie de la transaction</label>
                         </div>
                         <div class="w-2/3">
-                            <p>{{ $categorie->intitule }}</p>
+                            <input disabled class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{ $categorie->intitule }}">
                         </div>
 
                     </div>
@@ -54,10 +62,10 @@
 
                     <div class="bg-gray-200 flex space-between items-center p-5 rounded-lg w-full">
                         <div class="w-1/3">
-                            <label><b>Description de la transaction : </b></label>
+                            <label>Description de la transaction</label>
                         </div>
                         <div class="w-2/3">
-                            <p>{{ $transaction->description }}</p>
+                            <input disabled class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{ $transaction->description }}">
                         </div>
                     </div>
                     @error('description')
@@ -69,10 +77,10 @@
 
                     <div class="bg-gray-200 flex space-between items-center p-5 rounded-lg w-full">
                         <div class="w-1/3">
-                            <label><b>Montant de la transaction : </b></label>
+                            <label>Montant de la transaction</label>
                         </div>
                         <div class="w-2/3">
-                            <p>{{ $transaction->montant }}</p>
+                            <input disabled class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{ $transaction->montant }}">
                         </div>
                     </div>
                     @error('montant')
@@ -84,10 +92,10 @@
 
                     <div class="bg-gray-200 flex space-between items-center p-5 rounded-lg w-full">
                         <div class="w-1/3">
-                            <label><b>Date : </b></label>
+                            <label>Date</label>
                         </div>
                         <div class="w-2/3">
-                            <p>{{ $transaction->date }}</p>
+                            <input disabled class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{ $transaction->date }}">
                         </div>
                     </div>
                     @error('sens_transaction')
@@ -96,13 +104,12 @@
                 </div>
 
                 <div class="p-5">
-
                     <div class="bg-gray-200 flex space-between items-center p-5 rounded-lg w-full">
                         <div class="w-1/3">
-                            <p>Sens de la transaction : </p>
+                            <p>Sens de la transaction</p>
                         </div>
                         <div class="w-2/3">
-                            <p>{{ $transaction->sens_transaction }}</p>
+                            <input disabled class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{ $transaction->sens_transaction }}">
                         </div>
                     </div>
                     @error('date')
@@ -111,14 +118,6 @@
                 </div>
 
                 <div>
-                    <div class="p-5">
-                        <div class="w-full">
-                            <a href="{{ route('compte.dashboard', $id_compte) }}"
-                                class=" bg-green-400 transition hover:bg-green-300 rounded-lg m-auto w-full justify-center items-center p-5 text-white font-bold">
-                                Retour au compte
-                            </a>
-                        </div>
-                    </div>
             </form>
         </div>
     </div>
