@@ -72,15 +72,7 @@
                 <table class="table-auto w-full rounded-lg">
                     <tbody>
                         <!--afficher tous les inviteUsers dans un tableau-->
-                        @foreach ($inviteUsers as $inviteUser)
-                            <tr>
-                                <td class="border px-4 py-2"></td>
-                                <td class="border px-4 py-2">
-
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
+                      
                 </table>
             </div>
         </div>
