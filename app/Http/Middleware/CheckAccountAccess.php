@@ -35,6 +35,17 @@ class CheckAccountAccess
                 $compte = Compte::where('id', $request->route('id'))->first();
                 $user = User::where('id', Auth::user()->id)->first();
 
+                // vérifier le role de l'utilisateur
+                if ($request->is('compte/*/edit')) {
+                    if($compte->id_admin == $user->id){
+                        $access = true;
+                    }
+                    else{
+                        //redirect to compte page
+                        return redirect()->route('compte.dashboard', $compte->id);
+                    }
+                }
+
                 $utilisateurCompte = UtilisateurCompte::where('id_user', $user->id)->where('id_compte', $compte->id)->first();
                 
                 if ($compte != null && $compte->id_admin == $user->id) {

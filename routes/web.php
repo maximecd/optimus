@@ -25,7 +25,7 @@ Route::get('/dashboard', function () {
 
 require __DIR__ . '/auth.php';
 
-Route::group(['middleware' => [CheckAccountAccess::class]], function () {
+Route::group(['middleware' => 'ownership'], function () {
 
     //Comptes
     Route::get('/', [CompteController::class, 'index'])->name('compte.index');
@@ -39,18 +39,9 @@ Route::group(['middleware' => [CheckAccountAccess::class]], function () {
 
     Route::put('compte/{id}/invite', [CompteController::class, 'invite'])->name('compte.invite');
     Route::delete('invite/{id}/decline', [CompteController::class, 'declineInvite'])->name('invite.decline');
-    Route::put('invite/{id}/accept', [CompteController::class, 'acceptInvite'])->name('invite.accept');
+    Route::delete('invite/{id}/accept', [CompteController::class, 'acceptInvite'])->name('invite.decline');
 
-    //ajouter route pour créer un compte
- 
-
-
-
-
-//    Route::resource('compte', CompteController::class);
-
-
-
+   
     // Transactions
     Route::get('compte/{id}/transaction/ajouter', [TransactionController::class, 'create'])->name('transaction.create');
     Route::post('compte/{id}/transaction/ajouter', [TransactionController::class, 'store'])->name('transaction.store');
