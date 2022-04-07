@@ -613,6 +613,9 @@ select {
 .left-0 {
   left: 0px;
 }
+.bottom-0 {
+  bottom: 0px;
+}
 .z-50 {
   z-index: 50;
 }
@@ -1003,9 +1006,6 @@ select {
 .pb-5 {
   padding-bottom: 1.25rem;
 }
-.pl-4 {
-  padding-left: 1rem;
-}
 .pt-20 {
   padding-top: 5rem;
 }
@@ -1050,6 +1050,10 @@ select {
   font-size: 1rem;
   line-height: 1.5rem;
 }
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
@@ -1065,6 +1069,9 @@ select {
 }
 .uppercase {
   text-transform: uppercase;
+}
+.italic {
+  font-style: italic;
 }
 .leading-7 {
   line-height: 1.75rem;
