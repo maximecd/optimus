@@ -613,9 +613,6 @@ select {
 .left-0 {
   left: 0px;
 }
-.bottom-0 {
-  bottom: 0px;
-}
 .z-50 {
   z-index: 50;
 }
@@ -670,9 +667,6 @@ select {
 }
 .mt-3 {
   margin-top: 0.75rem;
-}
-.mb-8 {
-  margin-bottom: 2rem;
 }
 .mb-2 {
   margin-bottom: 0.5rem;
