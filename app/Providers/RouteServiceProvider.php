@@ -17,7 +17,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const COMPTE = '/compte';
+    public const COMPTE = '/';
 
 
     /**

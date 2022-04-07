@@ -5,7 +5,7 @@
 @section('content')
     <div class="flex justify-center items-center h-full">
         <div class="sm:w-full lg:w-2/5 m-auto ">
-           
+
 
 
 
@@ -20,7 +20,7 @@
                             <div class="arrow"><span>&larr;</span> Retour</div>
                         </a>
                     </div>
-                 
+
 
                     <div class="bg-gray-200 flex justify-center items-center p-5 rounded-lg w-full">
                         <div class="w-1/3">
@@ -56,6 +56,38 @@
                         class="bg-red-400 transition hover:bg-red-300 flex justify-center items-center rounded-lg p-5 m-auto w-full text-white font-bold">Supprimer</button>
                 </form>
             </div>
+            <div class="p-5">
+                <form method="POST" action="{{ route('compte.invite', $compte->id) }}">
+                    {{ csrf_field() }}
+
+                    {{ method_field('PUT') }}
+
+                    <div class="bg-gray-200 flex justify-center items-center p-5 rounded-lg w-full">
+                        <div class="w-1/3">
+                            <label for="email"><b>Email :</b></label>
+                        </div>
+                        <div class="w-2/3">
+                            <input
+                                class="border-transparent shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="email" name="email" placeholder="domain@exemple.fr">
+                        </div>
+                    </div>
+                    @error('intitule')
+                        <p>Le mail est incorrect</p>
+                    @enderror
+            </div>
+            <div class="w-full flex m-auto p-5">
+                <button
+                    class="bg-blue-400 transition rounded-lg m-auto w-full justify-center items-center p-5 text-white font-bold hover:bg-blue-300"
+                    type="submit">
+                    Inviter
+                </button>
+
+            </div>
+
         </div>
+        </form>
+    </div>
+    </div>
     </div>
 @endsection
