@@ -9,7 +9,7 @@
                     <div class="arrow"><span>&larr;</span> Retour</div>
                 </a>
             </div>
-            <div class="nom-compte bg-gray-50 p-8 shadow-lg rounded-lg flex flex-col item justify-between">
+            <div class="nom-compte bg-gray-50 p-8 shadow-lg rounded-lg flex flex-col item">
                 <form method="POST" action="{{ route('compte.update', $compte->id) }}">
                     {{ csrf_field() }}
                     {{ method_field('PUT') }}
@@ -26,18 +26,20 @@
                             type="submit">
                             Enregistrer
                         </button>
-
-                        @error('intitule')
-                            <p>Le nom du compte est incorrect</p>
-                        @enderror
-
-                        <form action="{{ route('compte.destroy', $compte->id) }}" method="post">
-                            {{ csrf_field() }}
-                            {{ method_field('DELETE') }}
-                            <button type="submit"
-                                class="bg-red-400 transition hover:bg-red-300 flex justify-center items-center rounded-lg p-5 m-auto w-full text-white font-bold">Supprimer</button>
-                        </form>
                     </div>
+                </form>
+
+                @error('intitule')
+                    <p>Le nom du compte est incorrect</p>
+                @enderror
+                <div>
+                    <form action="{{ route('compte.destroy', $compte->id) }}" method="post">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+                        <button type="submit"
+                            class="bg-red-400 transition hover:bg-red-300 flex justify-center items-center rounded-lg p-5 m-auto w-full text-white font-bold">Supprimer</button>
+                    </form>
+                </div>
             </div>
 
 
