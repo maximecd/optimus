@@ -22,6 +22,9 @@ class DatabaseSeeder extends Seeder
         User::factory(1)
             ->asAdmin()
             ->create();
+        User::factory(1)
+            ->compteTest()
+            ->create();
 
         $categories = ['Alimentation', 'Loisirs', 'Transports', 'Restauration', 'Loyer', 'Salaire'];
         foreach($categories as $category) {
