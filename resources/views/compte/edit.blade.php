@@ -69,13 +69,19 @@
                 </form>
             </div>
 
-            <div class="utilisateurs-compte bg-gray-50 p-8 shadow-lg rounded-lg flex flex-col item justify-between">
+            <div class="utilisateurs-compte bg-gray-50 p-8 shadow-lg rounded-lg flex flex-col">
                 <p class="text-xl font-bold mb-4">Utilisateurs du compte :</p>
                 <table class="table-auto w-full rounded-lg">
                     <tbody>
+                        <tr class="border-t">
+                            <td class="border px-4 py-2">{{ $user->name }}</td>
+                            <td class="border px-4 py-2">{{ $user->email }}</td>
+                        </tr>
                         <!--afficher tous les inviteUsers dans un tableau-->
                         @foreach ($inviteUsers as $inviteUser)
-                            <tr>
+                            <tr class="border-t">
+
+                                <td class="border px-4 py-2">{{ $inviteUser->user->name }}</td>
                                 <td class="border px-4 py-2">{{ $inviteUser->user->email }}</td>
                                 <td class="border px-4 py-2">
                                     <form action="{{ route('compte.destroy', $compte->id) }}" method="post">
@@ -87,7 +93,7 @@
                                 </td>
                             </tr>
                         @endforeach
-                      
+
                 </table>
             </div>
         </div>
