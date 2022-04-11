@@ -7,8 +7,9 @@
 
 
 
-    <div>
+    <div class="text-xl font-bold">
         Vos comptes
+        <hr>
     </div>
 
     <div class="my-6 flex flex-nowrap">
@@ -30,10 +31,11 @@
         </a>
     </div>
 
-    @if(!$comptesInv->isEmpty())
+    @if (!$comptesInv->isEmpty())
 
-        <div>
+        <div class="text-xl font-bold">
             Vos comptes partagés
+            <hr>
         </div>
 
         <div class="my-6 flex flex-nowrap">
@@ -51,9 +53,13 @@
 
     @endif
 
-    @if(!$invitations->isEmpty())
+    @if (!$invitations->isEmpty())
 
-        <div>Invitations</div>
+        <div class="text-xl font-bold">
+            Invitations
+            <hr>
+        </div>
+        
 
         <div class=class="my-6 flex flex-nowrap">
             @foreach ($invitations as $invitation)
@@ -84,6 +90,6 @@
                 <hr>
             @endforeach
         </div>
-        @endif
+    @endif
 
-    @endsection
+@endsection
