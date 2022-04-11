@@ -50,4 +50,15 @@ class UserFactory extends Factory
             ];
         });
     }
+
+    public function compteTest(){
+        return $this->state(function (array $attributes){
+            return[
+                'first_name' => 'Nomtest',
+                'name' => 'Prenomtest',
+                'email' => 'test@optimus.fr'
+            ];
+        });
+    }
+
 }

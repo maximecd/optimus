@@ -52,5 +52,15 @@
                 </x-button>
             </div>
         </form>
+
+        <div>
+            <p>Compte de test :</p>
+            <p>Email : test@optimus.fr</p>
+            <p>Mot de passe : password</p>
+        </div>
+        
     </x-auth-card>
+
+        
+
 </x-guest-layout>
