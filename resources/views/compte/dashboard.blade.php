@@ -16,7 +16,7 @@
                     <hr>
                 </div>
                 <div>
-                    <p class=" text-xl">Solde :
+                    <p class="text-xl">Solde :
                         <span class="font-bold text-2xl {{ $solde > 0 ? 'text-green-600' : 'text-red-600' }}">
                             {{ number_format($solde, 2) }} €</span>
                     </p>
