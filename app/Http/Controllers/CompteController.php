@@ -99,7 +99,10 @@ class CompteController extends Controller
         foreach ($inviteUsers as $inviteUser) {
             $inviteUser->user = User::find($inviteUser->id_user);
         }
-        return view('compte/edit', compact('compte','inviteUsers'));
+
+        $user = User::find($compte->id_admin);
+
+        return view('compte/edit', compact('compte','inviteUsers','user'));
     }
 
     /**
