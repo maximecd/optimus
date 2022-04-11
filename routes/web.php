@@ -40,6 +40,7 @@ Route::group(['middleware' => 'ownership'], function () {
     Route::put('compte/{id}/invite', [CompteController::class, 'invite'])->name('compte.invite');
     Route::delete('invite/{id}/decline', [CompteController::class, 'declineInvite'])->name('invite.decline');
     Route::put('invite/{id}/accept', [CompteController::class, 'acceptInvite'])->name('invite.accept');
+    Route::delete('invite/{id}/{id_user}/delete', [CompteController::class, 'deleteUtilisateurInvite'])->name('compte.deleteUtilisateurInvite');
 
    
     // Transactions

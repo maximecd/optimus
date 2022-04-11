@@ -78,7 +78,7 @@
                             <tr>
                                 <td class="border px-4 py-2">{{ $inviteUser->user->email }}</td>
                                 <td class="border px-4 py-2">
-                                    <form action="{{ route('compte.destroy', $compte->id) }}" method="post">
+                                    <form action="{{ route('compte.deleteUtilisateurInvite', ['id' => $compte->id, 'id_user' => $inviteUser->id_user]) }}" method="post">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
                                         <button type="submit"

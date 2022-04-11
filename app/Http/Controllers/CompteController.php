@@ -177,4 +177,9 @@ class CompteController extends Controller
         Invitation::where('id_compte', $id)->where('id_invite', Auth::id())->delete();
         return redirect()->route('compte.index')->with('info', 'Vous avez bien accepté l\'invitation');
     }
+
+    public function deleteUtilisateurInvite($id_compte, $id_user){
+        UtilisateurCompte::where('id_compte', $id_compte)->where('id_user', $id_user)->delete();
+        return redirect()->route('compte.dashboard', $id_compte)->with('info', 'Vous avez bien supprimé l\'utilisateur');
+    }
 }
