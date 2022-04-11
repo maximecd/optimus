@@ -30,7 +30,7 @@ return new class extends Migration
                 ->foreign('id_compte')
                 ->references('id')
                 ->on('comptes')
-                ->onDelete('restrict')
+                ->onDelete('cascade')
                 ->onUpdate('restrict');
 
             $table->boolean('editeur');
