@@ -95,6 +95,10 @@ class CompteController extends Controller
     {
         $compte = Compte::where('id', $id_compte)->firstOrFail();
         $inviteUsers = UtilisateurCompte::where('id_compte', $id_compte)->get();
+
+        foreach ($inviteUsers as $inviteUser) {
+            $inviteUser->user = User::find($inviteUser->id_user);
+        }
         return view('compte/edit', compact('compte','inviteUsers'));
     }
 

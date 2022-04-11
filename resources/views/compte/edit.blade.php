@@ -72,6 +72,19 @@
                 <table class="table-auto w-full rounded-lg">
                     <tbody>
                         <!--afficher tous les inviteUsers dans un tableau-->
+                        @foreach ($inviteUsers as $inviteUser)
+                            <tr>
+                                <td class="border px-4 py-2">{{ $inviteUser->user->email }}</td>
+                                <td class="border px-4 py-2">
+                                    <form action="{{ route('compte.destroy', $compte->id) }}" method="post">
+                                        {{ csrf_field() }}
+                                        {{ method_field('DELETE') }}
+                                        <button type="submit"
+                                            class="bg-red-400 transition hover:bg-red-300 flex justify-center items-center rounded-lg p-5 m-auto w-full text-white font-bold">Supprimer</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
                       
                 </table>
             </div>
