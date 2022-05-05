@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'a6dbdf3dd09b0128a111262cf472c1dad615dad3',
+        'reference' => '5199633ede2205196be77fa6af995edc30448c1a',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -380,12 +380,12 @@
             'dev_requirement' => false,
         ),
         'laravel/dusk' => array(
-            'pretty_version' => 'v6.22.3',
-            'version' => '6.22.3.0',
+            'pretty_version' => 'v6.23.0',
+            'version' => '6.23.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../laravel/dusk',
             'aliases' => array(),
-            'reference' => 'f42844d5a7eace45d199d276bb2bc23fec788256',
+            'reference' => '98901d49176977c96330fd8c2ca5460eee50a246',
             'dev_requirement' => true,
         ),
         'laravel/framework' => array(
@@ -403,7 +403,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'a6dbdf3dd09b0128a111262cf472c1dad615dad3',
+            'reference' => '5199633ede2205196be77fa6af995edc30448c1a',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(

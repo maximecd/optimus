@@ -39,4 +39,5 @@ class ExampleTest extends DuskTestCase
                     ->assertSee('Compte de test');
         });
     }
+
 }
