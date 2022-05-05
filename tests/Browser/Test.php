@@ -26,6 +26,17 @@ class ExampleTest extends DuskTestCase
         });
     }
 
+    public function testMaxime()
+    {
+        $this->browse(function (Browser $browser){
+            $browser->visit('/')
+            ->press('button#dropdown-settings')
+            ->click('a[href="' . route('logout') . '"]')
+            ->assertSee('SE CONNECTER');
+
+        });
+    }
+
     public function testMateo()
     {
         $this->browse(function (Browser $browser) {
